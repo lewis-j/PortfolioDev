@@ -3,3 +3,24 @@ $bg: green;
 body{
     background: $bg;
 }
+
+img.banner-img {
+    position: fixed;
+    width: 100%;
+    height: 500px;
+    
+}
+
+
+.title{
+    position: absolute;
+    top: 150px;
+}
+
+.nav {
+    position: fixed;
+}
+
+.b-container {
+    height: 1000px;
+}
