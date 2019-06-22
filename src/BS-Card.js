@@ -8,7 +8,7 @@ const BSCard = (props) => {
   return (
     <div>
       <Card>
-        <CardImg top width="100%" src= { props.imgSrc } />
+        <a href= {props.siteUrl} ><CardImg top width="100%" src= { props.imgSrc } /></a>
         <CardBody>
           <CardTitle>{ props.title }</CardTitle>
           <CardSubtitle>Card subtitle</CardSubtitle>
