@@ -10,7 +10,7 @@ export default class Portfolio extends Component{
     <Container  className="portfolio" >
         <Row>
         {
-        this.props.data.map((item, index) => <Col key = {index} md="4" sm="6" ><Card title = {item.title} imgSrc = {item.imgSrc} siteUrl = {item.siteUrl} /> </Col>)
+        this.props.data.map((item, index) => <Col key = {index} md="4" sm="6" ><Card item = {item} i = {index} toggleModal = {this.props.toggleModal} /> </Col>)
          }
         </Row>
         </Container>

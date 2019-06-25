@@ -2,6 +2,7 @@
 import React, { Component} from "react";
 import Nav from "./navbar.js";
 import Portfolio from "./portfolio.js";
+import ModalProject from "./modal.js"
 import Plx from 'react-plx';
 
 function importAll(r) {
@@ -101,6 +102,32 @@ const parallaxData = [
 
 class App extends Component{
 
+  constructor(props) {
+    super(props);
+    this.state = {
+      modal: false,
+      modalItem: {}
+    };
+
+    this.toggle = this.toggle.bind(this);
+    this.toggleOn = this.toggleOn.bind(this);
+  }
+
+  toggle() {
+
+    this.setState(prevState => ({
+      modal: !prevState.modal
+    }));
+  }
+
+  toggleOn(index) {
+console.log(index);
+    this.setState(prevState => ({
+      modal: !prevState.modal,
+      modalItem: portfolioData[index]
+    }));
+  }
+
   render(){
     return(
 
@@ -121,7 +148,8 @@ class App extends Component{
         </section>
 
         <div className="port-heading">My Portfolio </div>
-        <Portfolio data = { portfolioData } />
+        <Portfolio data = { portfolioData } toggleModal = { this.toggleOn } />
+        <ModalProject mod = { this.state.modal } toggle = { this.toggle } data = {this.state.modalItem}/>
         </div>
     );
   }

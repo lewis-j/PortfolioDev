@@ -8,12 +8,12 @@ const BSCard = (props) => {
   return (
     <div>
       <Card>
-        <a href= {props.siteUrl} ><CardImg top width="100%" src= { props.imgSrc } /></a>
+        <a href= {props.item.siteUrl} ><CardImg top width="100%" src= { props.item.imgSrc } /></a>
         <CardBody>
-          <CardTitle>{ props.title }</CardTitle>
+          <CardTitle>{ props.item.title }</CardTitle>
           <CardSubtitle>Card subtitle</CardSubtitle>
-          <CardText>{ props.discription }</CardText>
-          <Button>Button</Button>
+          <CardText>{ props.item.discription }</CardText>
+          <Button onClick= {()=>{ props.toggleModal(props.i)}} >Button</Button>
         </CardBody>
       </Card>
     </div>
