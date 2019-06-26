@@ -58,3 +58,23 @@ img.banner-img {
 .modal-img{
   width: 100%;
 }
+
+.image-holder {
+  height: 100%;
+  width: 100%;
+  position:relative;
+}
+.image-holder:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0,255,255, 0.5);
+  transition: all .3s linear;
+}
+.image-holder:hover:before {
+  background: none;
+}
