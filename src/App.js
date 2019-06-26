@@ -2,7 +2,6 @@
 import React, { Component} from "react";
 import Nav from "./navbar.js";
 import Portfolio from "./portfolio.js";
-import ModalProject from "./modal.js"
 import Plx from 'react-plx';
 
 function importAll(r) {
@@ -10,76 +9,9 @@ function importAll(r) {
 }
 
 const images = importAll(require.context('./img', false, /\.(png|jpe?g|svg)$/));
+console.log(images);
 
-console.log( images );
-const portfolioData = [
-    {
-        title: "Brooklyn Arts Museum",
-        imgSrc: images[0],
-        discription: "Here's a short discription",
-        siteUrl: "http://lindseyljackson.com/Sites/Brooklyn-Arts/root/collection.html",
-    },
-    {
-        title: "Phaser 2 game",
-        discription: "here is another discription",
-        imgSrc: images [1]
-    },
-    {
-        title: "Quiz App",
-        discription: "A quiz app made with Jquery and Bootstrap",
-        imgSrc: images[1]
 
-    },  {
-          title: "Brooklyn Arts Museum",
-          imgSrc: images[0],
-          discription: "Here's a short discription",
-          siteUrl: "http://lindseyljackson.com/Sites/Brooklyn-Arts/root/collection.html",
-      },
-      {
-          title: "Phaser 2 game",
-          discription: "here is another discription",
-          imgSrc: images [1]
-      },
-      {
-          title: "Quiz App",
-          discription: "A quiz app made with Jquery and Bootstrap",
-          imgSrc: images[1]
-
-      },  {
-            title: "Brooklyn Arts Museum",
-            imgSrc: images[0],
-            discription: "Here's a short discription",
-            siteUrl: "http://lindseyljackson.com/Sites/Brooklyn-Arts/root/collection.html",
-        },
-        {
-            title: "Phaser 2 game",
-            discription: "here is another discription",
-            imgSrc: images [1]
-        },
-        {
-            title: "Quiz App",
-            discription: "A quiz app made with Jquery and Bootstrap",
-            imgSrc: images[1]
-
-        },  {
-              title: "Brooklyn Arts Museum",
-              imgSrc: images[0],
-              discription: "Here's a short discription",
-              siteUrl: "http://lindseyljackson.com/Sites/Brooklyn-Arts/root/collection.html",
-          },
-          {
-              title: "Phaser 2 game",
-              discription: "here is another discription",
-              imgSrc: images [1]
-          },
-          {
-              title: "Quiz App",
-              discription: "A quiz app made with Jquery and Bootstrap",
-              imgSrc: images[1]
-
-          }
-
-];
 
 const parallaxData = [
   {
@@ -129,32 +61,6 @@ const plxTitle = [
 
 class App extends Component{
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      modal: false,
-      modalItem: {}
-    };
-
-    this.toggle = this.toggle.bind(this);
-    this.toggleOn = this.toggleOn.bind(this);
-  }
-
-  toggle() {
-
-    this.setState(prevState => ({
-      modal: !prevState.modal
-    }));
-  }
-
-  toggleOn(index) {
-console.log(index);
-    this.setState(prevState => ({
-      modal: !prevState.modal,
-      modalItem: portfolioData[index]
-    }));
-  }
-
   render(){
     return(
 
@@ -162,7 +68,6 @@ console.log(index);
 
         <Plx
         className='MyAwesomeParallax'
-        onPlxEnd = { ()=>{ console.log(this.state.InView);  }}
         parallaxData={ parallaxData }
         animateWhenNotInViewport = {true}
       >
@@ -187,8 +92,7 @@ console.log(index);
 
 
 
-        <Portfolio data = { portfolioData } toggleModal = { this.toggleOn } />
-        <ModalProject mod = { this.state.modal } toggle = { this.toggle } data = {this.state.modalItem}/>
+        <Portfolio S />
         </div>
     );
   }

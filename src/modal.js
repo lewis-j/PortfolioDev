@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import Carousel from './carousel.js';
 
 class ModalProject extends React.Component {
 
@@ -10,7 +11,7 @@ class ModalProject extends React.Component {
         <Modal isOpen={this.props.mod} toggle={this.props.toggle} className={this.props.className}>
           <ModalHeader toggle={this.props.toggle}>{ this.props.data.title }</ModalHeader>
           <ModalBody>
-            <img src= { this.props.data.imgSrc } className = "modal-img"/>
+          <Carousel />
           </ModalBody>
           <ModalFooter>
             <Button color="primary" onClick={this.props.toggle}>Do Something</Button>{' '}
