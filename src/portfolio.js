@@ -85,9 +85,10 @@ export default class Portfolio extends Component{
     super(props);
     this.state = {
       modal: false,
-      modalItem: {}
+      modalItem: {},
+      index: 0
     };
-
+    this.updateIndex = this.updateIndex.bind(this);
     this.toggle = this.toggle.bind(this);
     this.toggleOn = this.toggleOn.bind(this);
   }
@@ -103,9 +104,17 @@ export default class Portfolio extends Component{
 console.log(index);
     this.setState(prevState => ({
       modal: !prevState.modal,
-      modalItem: portfolioData[index]
+      modalItem: portfolioData[index],
+      index: index
     }));
   }
+
+  updateIndex(index){
+this.setState( {index: index,
+                modalItem: portfolioData[index] });
+  }
+
+
 
     render() {
 
@@ -119,7 +128,7 @@ console.log(index);
          }
         </Row>
         </Container>
-        <ModalProject mod = { this.state.modal } toggle = { this.toggle } data = {this.state.modalItem}/>
+        <ModalProject index = { this.state.index } updateIndex = {this.updateIndex} mod = { this.state.modal } toggle = { this.toggle } data = {this.state.modalItem}/>
 </div>
 
     )

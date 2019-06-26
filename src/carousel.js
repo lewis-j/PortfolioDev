@@ -28,7 +28,6 @@ const items = [
 class MyCarousel extends Component {
   constructor(props) {
     super(props);
-    this.state = { activeIndex: 0 };
     this.next = this.next.bind(this);
     this.previous = this.previous.bind(this);
     this.goToIndex = this.goToIndex.bind(this);
@@ -46,23 +45,23 @@ class MyCarousel extends Component {
 
   next() {
     if (this.animating) return;
-    const nextIndex = this.state.activeIndex === items.length - 1 ? 0 : this.state.activeIndex + 1;
-    this.setState({ activeIndex: nextIndex });
+    const nextIndex = this.props.index === items.length - 1 ? 0 : this.props.index + 1;
+  this.props.updateIndex( nextIndex );
   }
 
   previous() {
     if (this.animating) return;
-    const nextIndex = this.state.activeIndex === 0 ? items.length - 1 : this.state.activeIndex - 1;
-    this.setState({ activeIndex: nextIndex });
+    const nextIndex = this.props.index === 0 ? items.length - 1 : this.props.index - 1;
+  this.props.updateIndex( nextIndex );
   }
 
   goToIndex(newIndex) {
     if (this.animating) return;
-    this.setState({ activeIndex: newIndex });
+  this.props.updateIndex( nextIndex );
   }
 
   render() {
-    const { activeIndex } = this.state;
+    const  activeIndex  = this.props.index;
 
     const slides = items.map((item) => {
       return (
