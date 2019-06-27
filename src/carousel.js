@@ -10,6 +10,7 @@ import {
 class MyCarousel extends Component {
   constructor(props) {
     super(props);
+    this.state = {activeIndex : 0 }
     this.next = this.next.bind(this);
     this.previous = this.previous.bind(this);
     this.goToIndex = this.goToIndex.bind(this);
@@ -27,25 +28,34 @@ class MyCarousel extends Component {
 
   next() {
     if (this.animating) return;
-    const nextIndex = this.props.index === this.props.items.length - 1 ? 0 : this.props.index + 1;
-  this.props.updateIndex( nextIndex );
+    const isLast = (this.state.activeIndex === this.props.items.imgGrp.length - 1 );
+    const nextIndex = (isLast) ? 0 : this.state.activeIndex + 1;
+    console.log("islast: ",isLast);
+    if(isLast) {
+        console.log("RUnning updateIndex");
+    this.props.updateIndex("next");
+  }
+    this.setState({ activeIndex: nextIndex });
+
+
   }
 
   previous() {
     if (this.animating) return;
-    const nextIndex = this.props.index === 0 ? this.props.items.length - 1 : this.props.index - 1;
-  this.props.updateIndex( nextIndex );
+    const isFirst = (this.state.activeIndex === 0 );
+    const nextIndex = (isFirst) ? this.props.items.length - 1 : this.state.activeIndex - 1;
+  this.props.updateIndex( "previous" );
   }
 
   goToIndex(newIndex) {
     if (this.animating) return;
-  this.props.updateIndex( nextIndex );
+  this.setState({ activeIndex: nextIndex });
   }
 
   render() {
-    const  activeIndex  = this.props.index;
-
-    const slides = this.props.items.map((item, index) => {
+    const { activeIndex } = this.state;
+console.log(this.props.items.imgGrp);
+    const slides = this.props.items.imgGrp.map((item, index) => {
       console.log("carousel"+index);
       return (
         <CarouselItem
@@ -53,8 +63,8 @@ class MyCarousel extends Component {
           onExited={this.onExited}
           key={"carousel"+index}
         >
-          <img src={item.imgSrc} alt={item.title} className = "carousel-img"/>
-          <CarouselCaption captionText={item.title} captionHeader={item.title} />
+          <img src={item} alt={this.props.items.title} className = "carousel-img"/>
+          <CarouselCaption captionText={this.props.items.title} captionHeader={this.props.items.title} />
         </CarouselItem>
       );
     });
@@ -65,7 +75,7 @@ class MyCarousel extends Component {
         next={this.next}
         previous={this.previous}
       >
-        <CarouselIndicators items={this.props.items} activeIndex={activeIndex} onClickHandler={this.goToIndex} />
+        <CarouselIndicators items={this.props.items.imgGrp} activeIndex={activeIndex} onClickHandler={this.goToIndex} />
         {slides}
         <CarouselControl direction="prev" directionText="Previous" onClickHandler={this.previous} />
         <CarouselControl direction="next" directionText="Next" onClickHandler={this.next} />

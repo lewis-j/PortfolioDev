@@ -15,18 +15,21 @@ const portfolioData = [
     {
         title: "Brooklyn Arts Museum",
         imgSrc: resources[0],
+        imgGrp: resources,
         discription: "Here's a short discription",
         siteUrl: "http://lindseyljackson.com/Sites/Brooklyn-Arts/root/collection.html",
     },
     {
         title: "Phaser 2 game",
         discription: "here is another discription",
-        imgSrc: images [1]
+        imgSrc: images[0],
+        imgGrp: images,
     },
     {
         title: "Quiz App",
         discription: "A quiz app made with Jquery and Bootstrap",
-        imgSrc: images[1]
+        imgSrc: resources[0],
+        imgGrp: resources,
 
     }
 
@@ -62,9 +65,13 @@ console.log(index);
     }));
   }
 
-  updateIndex(index){
-this.setState( {index: index,
-                modalItem: portfolioData[index] });
+  updateIndex( x ){
+    switch(x){
+      case "next": this.setState(prevState => ({index: (prevState.index === portfolioData.length - 1) ? 0 : prevState.index + 1 ,
+                                   modalItem: portfolioData[(prevState.index === portfolioData.length - 1) ? 0 : prevState.index + 1 ] }));
+      break;
+    }
+
   }
 
 
@@ -81,7 +88,7 @@ this.setState( {index: index,
          }
         </Row>
         </Container>
-        <ModalProject index = { this.state.index } updateIndex = {this.updateIndex} mod = { this.state.modal } toggle = { this.toggle } data = {this.state.modalItem} sliderData = { portfolioData }/>
+        <ModalProject index = { this.state.index } updateIndex = {this.updateIndex} mod = { this.state.modal } toggle = { this.toggle } data = {this.state.modalItem} />
 </div>
 
     )
