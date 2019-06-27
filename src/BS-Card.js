@@ -8,15 +8,14 @@ const BSCard = (props) => {
   return (
     <div>
       <Card>
-<div className ="image-holder">
-        <a href= {props.item.siteUrl} >
-        <CardImg top width="100%" src= { props.item.imgSrc } /></a>
-        </div>
+
+        <div className ="image-holder" onClick= {()=>{ props.toggleModal(props.i)}} >
+        <CardImg top width="100%" src= { props.item.imgSrc } />
+                </div>
         <CardBody>
           <CardTitle>{ props.item.title }</CardTitle>
           <CardSubtitle>Card subtitle</CardSubtitle>
           <CardText>{ props.item.discription }</CardText>
-          <Button onClick= {()=>{ props.toggleModal(props.i)}} >Button</Button>
         </CardBody>
       </Card>
     </div>
