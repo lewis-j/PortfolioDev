@@ -2,7 +2,7 @@
     import maps2 from './img/moreleaves.jpg';
 
 const resources =
-    [gmapssld1, maps2];
+    [gmapssld1, maps2, gmapssld1, maps2];
 
 
 export default resources;

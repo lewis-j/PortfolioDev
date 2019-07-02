@@ -16,7 +16,7 @@ const portfolioData = [
     {
         title: "Brooklyn Arts Museum",
         imgSrc: resources[0],
-        imgGrp: resources,
+        imgGrp: images,
         discription: "Here's a short discription",
         siteUrl: "http://lindseyljackson.com/Sites/Brooklyn-Arts/root/collection.html",
     },
@@ -30,7 +30,7 @@ const portfolioData = [
         title: "Quiz App",
         discription: "A quiz app made with Jquery and Bootstrap",
         imgSrc: resources[0],
-        imgGrp: resources,
+        imgGrp: images,
 
     }
 
@@ -43,11 +43,14 @@ export default class Portfolio extends Component{
     this.state = {
       modal: false,
       modalItem: {},
-      index: 0
+      index: 0,
+      subIndex: 0
     };
-    this.updateIndex = this.updateIndex.bind(this);
     this.toggle = this.toggle.bind(this);
     this.toggleOn = this.toggleOn.bind(this);
+    this.next = this.next.bind(this);
+    this.previous = this.previous.bind(this);
+    this.goToIndex = this.goToIndex.bind(this);
   }
 
   toggle() {
@@ -66,22 +69,40 @@ export default class Portfolio extends Component{
     }));
   }
 
-  updateIndex( x ){
-    switch(x){
-      case "next": this.setState(prevState => ({index: (prevState.index === portfolioData.length - 1) ? 0 : prevState.index + 1 ,
-                                               modalItem: portfolioData[(prevState.index === portfolioData.length - 1) ? 0 : prevState.index + 1 ] }));
-            break;
-      case "previous":
-      console.log("previous ran");
-      this.setState(prevState => ({
-           index: (prevState.index === 0) ? portfolioData.length - 1 : prevState.index - 1,
-           modalItem: portfolioData[(prevState.index === 0) ? portfolioData.length-1 : prevState.index - 1]
-         }));
-           return  portfolioData[(this.state.index === 0) ? portfolioData.length-1 : this.state.index - 1].imgGrp.length - 1;
+  next(){
+
+    const isLast = (this.state.subIndex === this.state.modalItem.imgGrp.length - 1 );
+    const nextIndex = (isLast) ? 0 : this.state.subIndex + 1;
+  this.setState({ subIndex: nextIndex },()=>{
+    if(isLast) {
+      this.setState(prevState => ({ index: (prevState.index === portfolioData.length - 1) ? 0 : prevState.index + 1,
+                                    modalItem: portfolioData[(prevState.index === portfolioData.length - 1) ? 0 : prevState.index + 1]
+                                    }));
+    }
+
+  } );
 
 
   }
 
+  previous(){
+    const isFirst = (this.state.subIndex === 0 );
+    if(isFirst){
+      this.setState(prevState => ({ index: ( prevState.index === 0) ? portfolioData.length -1 : prevState.index - 1,
+                                    modalItem: portfolioData[( prevState.index === 0) ? portfolioData.length -1 : prevState.index - 1],
+                                  }), ()=>{
+                                    this.setState({subIndex:  this.state.modalItem.imgGrp.length -1 })
+                                  });
+    }else{
+      this.setState(prevState => ({ subIndex: prevState.subIndex -1 }));
+  }
+
+
+
+  }
+
+  goToIndex(newIndex) {
+  this.setState({ subIndex: nextIndex });
   }
 
 
@@ -99,7 +120,7 @@ export default class Portfolio extends Component{
         </Row>
         </Container>
 
-        <ModalProject index = { this.state.index } updateIndex = {this.updateIndex} mod = { this.state.modal } toggle = { this.toggle } data = {this.state.modalItem} />
+        <ModalProject index = { this.state.index } subIndex = { this.state.subIndex } next = { this.next } previous = { this.previous } updateIndex = {this.updateIndex} mod = { this.state.modal } toggle = { this.toggle } data = {this.state.modalItem} />
 
 </div>
 

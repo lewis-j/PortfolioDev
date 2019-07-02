@@ -10,7 +10,6 @@ import {
 class MyCarousel extends Component {
   constructor(props) {
     super(props);
-    this.state = {activeIndex : 0 }
     this.next = this.next.bind(this);
     this.previous = this.previous.bind(this);
     this.goToIndex = this.goToIndex.bind(this);
@@ -28,42 +27,21 @@ class MyCarousel extends Component {
 
   next() {
     if (this.animating) return;
-    const isLast = (this.state.activeIndex === this.props.items.imgGrp.length - 1 );
-    const nextIndex = (isLast) ? 0 : this.state.activeIndex + 1;
-  this.setState({ activeIndex: nextIndex },()=>{
-    if(isLast) {
-     this.props.updateIndex("next");
-    }
-
-  } );
-
-
-
-
-
+    this.props.next();
   }
 
   previous() {
     if (this.animating) return;
-    const isFirst = (this.state.activeIndex === 0 );
-    const nextIndex = (isFirst) ? this.props.items.length - 1 : this.state.activeIndex - 1;
-    if(isFirst){
-     const subI = this.props.updateIndex( "previous" );
-
-     this.setState({ activeIndex: subI });
-    }else{
-      this.setState({ activeIndex: nextIndex });
-  }
-
+this.props.previous();
   }
 
   goToIndex(newIndex) {
     if (this.animating) return;
-  this.setState({ activeIndex: nextIndex });
+  this.props.goToIndex(newIndex);
   }
 
   render() {
-    const { activeIndex } = this.state;
+    const  activeIndex  = this.props.subIndex;
     const slides = this.props.items.imgGrp.map((item, index) => {
       return (
         <CarouselItem
