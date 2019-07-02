@@ -9,7 +9,8 @@ function importAll(r) {
 }
 
 const images = importAll(require.context('./img', false, /\.(png|jpe?g|svg)$/));
-console.log(images);
+
+
 
 const portfolioData = [
     {
@@ -57,7 +58,7 @@ export default class Portfolio extends Component{
   }
 
   toggleOn(index) {
-console.log(index);
+
     this.setState(prevState => ({
       modal: !prevState.modal,
       modalItem: portfolioData[index],
@@ -68,9 +69,18 @@ console.log(index);
   updateIndex( x ){
     switch(x){
       case "next": this.setState(prevState => ({index: (prevState.index === portfolioData.length - 1) ? 0 : prevState.index + 1 ,
-                                   modalItem: portfolioData[(prevState.index === portfolioData.length - 1) ? 0 : prevState.index + 1 ] }));
-      break;
-    }
+                                               modalItem: portfolioData[(prevState.index === portfolioData.length - 1) ? 0 : prevState.index + 1 ] }));
+            break;
+      case "previous":
+      console.log("previous ran");
+      this.setState(prevState => ({
+           index: (prevState.index === 0) ? portfolioData.length - 1 : prevState.index - 1,
+           modalItem: portfolioData[(prevState.index === 0) ? portfolioData.length-1 : prevState.index - 1]
+         }));
+           return  portfolioData[(this.state.index === 0) ? portfolioData.length-1 : this.state.index - 1].imgGrp.length - 1;
+
+
+  }
 
   }
 
@@ -88,7 +98,9 @@ console.log(index);
          }
         </Row>
         </Container>
+
         <ModalProject index = { this.state.index } updateIndex = {this.updateIndex} mod = { this.state.modal } toggle = { this.toggle } data = {this.state.modalItem} />
+
 </div>
 
     )

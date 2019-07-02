@@ -30,12 +30,15 @@ class MyCarousel extends Component {
     if (this.animating) return;
     const isLast = (this.state.activeIndex === this.props.items.imgGrp.length - 1 );
     const nextIndex = (isLast) ? 0 : this.state.activeIndex + 1;
-    console.log("islast: ",isLast);
+  this.setState({ activeIndex: nextIndex },()=>{
     if(isLast) {
-        console.log("RUnning updateIndex");
-    this.props.updateIndex("next");
-  }
-    this.setState({ activeIndex: nextIndex });
+     this.props.updateIndex("next");
+    }
+
+  } );
+
+
+
 
 
   }
@@ -44,7 +47,14 @@ class MyCarousel extends Component {
     if (this.animating) return;
     const isFirst = (this.state.activeIndex === 0 );
     const nextIndex = (isFirst) ? this.props.items.length - 1 : this.state.activeIndex - 1;
-  this.props.updateIndex( "previous" );
+    if(isFirst){
+     const subI = this.props.updateIndex( "previous" );
+
+     this.setState({ activeIndex: subI });
+    }else{
+      this.setState({ activeIndex: nextIndex });
+  }
+
   }
 
   goToIndex(newIndex) {
@@ -54,9 +64,7 @@ class MyCarousel extends Component {
 
   render() {
     const { activeIndex } = this.state;
-console.log(this.props.items.imgGrp);
     const slides = this.props.items.imgGrp.map((item, index) => {
-      console.log("carousel"+index);
       return (
         <CarouselItem
           onExiting={this.onExiting}

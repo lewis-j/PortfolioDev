@@ -9,7 +9,8 @@ function importAll(r) {
 }
 
 const images = importAll(require.context('./img', false, /\.(png|jpe?g|svg)$/));
-console.log(images);
+
+
 
 
 
