@@ -1,8 +1,11 @@
-  import gmapssld1 from './img/leaves.jpg';
-    import maps2 from './img/moreleaves.jpg';
+  import gmaps_imgs from './img/leaves.jpg';
+    import cyborg_ninja from './img/moreleaves.jpg';
+    import portrait from './img/uk_portrait.jpg'
 
-const resources =
-    [gmapssld1, maps2, gmapssld1, maps2];
-
+const resources = {
+     myPortrait : portrait,
+     googleMaps : [gmaps_imgs, cyborg_ninja],
+     cyborgNinja :[gmaps_imgs, cyborg_ninja]
+     }
 
 export default resources;

@@ -1,7 +1,10 @@
+
+
 $bg: black;
-$banners: white;
+$banners: black;
 $fontTitle: black;
 $subtitle: grey;
+$imgFont: white;
 body{
     background: $bg;
 }
@@ -50,7 +53,7 @@ img.banner-img {
 
 
 .portfolio-title {
-  color: $banners;
+  color: white;
 
   width: 100%;
 text-align: center;
@@ -63,6 +66,18 @@ text-align: center;
   width: 100%;
 }
 
+.img-title {
+position: absolute;
+width: 200px;
+font-size: 30px;
+margin: auto;
+top:20px;
+left: 0;
+right: 0;
+color: $imgFont;
+
+}
+
 .image-holder {
   height: 100%;
   width: 100%;
@@ -70,6 +85,8 @@ text-align: center;
 }
 .image-holder:before {
   content: "";
+  color: white;
+  padding: 20px;
   display: block;
   position: absolute;
   top: 0;
@@ -81,9 +98,41 @@ text-align: center;
 }
 .image-holder:hover:before {
   background: none;
+  content: "";
+}
+
+.icon-grp{
+  width: 200px;
+      margin: 0px auto;
+      padding: 30px 0px;
 }
 
 .carousel-img {
 
   width: 100%;
+}
+
+.footer {
+  background-color: ghostwhite;
+  margin-top: 68px;
+}
+
+.follow-txt {
+  border-bottom: 1.5px solid red;
+    padding-bottom: 2px;
+    margin: 10px auto;
+    width: fit-content;
+    font-weight: 600;
+    font-size: 37px;
+
+}
+
+.instagram-icon:visited {
+  color:black;
+  margin-left: 5px;
+}
+
+.instagram-icon:hover {
+  color:white;
+  margin-left: 5px;
 }

@@ -12,6 +12,7 @@ class ModalProject extends React.Component {
           <ModalHeader toggle={this.props.toggle}>{ this.props.data.title }</ModalHeader>
           <ModalBody>
           <Carousel index = { this.props.index } subIndex = { this.props.subIndex } next = {this.props.next } previous = { this.props.previous } updateIndex = { this.props.updateIndex } items = { this.props.data }/>
+            {this.props.data.discription}
           </ModalBody>
           <ModalFooter>
             <Button color="primary" onClick={this.props.toggle}>Do Something</Button>{' '}

@@ -2,17 +2,9 @@
 import React, { Component} from "react";
 import Nav from "./navbar.js";
 import Portfolio from "./portfolio.js";
+import Footer from "./footer.js";
 import Plx from 'react-plx';
-
-function importAll(r) {
-  return r.keys().map(r);
-}
-
-const images = importAll(require.context('./img', false, /\.(png|jpe?g|svg)$/));
-
-
-
-
+import resources from './asset-list.js';
 
 const parallaxData = [
   {
@@ -72,7 +64,7 @@ class App extends Component{
         parallaxData={ parallaxData }
         animateWhenNotInViewport = {true}
       >
-        <img className="banner-img" src={images[0]}/>
+        <img className="banner-img" src={ resources.myPortrait }/>
       </Plx>
         <section className="b-container">
         <h3 className="myName-title">Lindsey Jackson's</h3>
@@ -93,7 +85,8 @@ class App extends Component{
 
 
 
-        <Portfolio S />
+        <Portfolio  />
+        <Footer />
         </div>
     );
   }

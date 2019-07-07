@@ -4,33 +4,26 @@ import Card from "./BS-Card.js";
 import ModalProject from './modal.js';
 import resources from './asset-list.js';
 
-function importAll(r) {
-  return r.keys().map(r);
-}
-
-const images = importAll(require.context('./img', false, /\.(png|jpe?g|svg)$/));
-
-
 
 const portfolioData = [
     {
         title: "Brooklyn Arts Museum",
-        imgSrc: resources[0],
-        imgGrp: images,
-        discription: "Here's a short discription",
+        imgSrc: resources.googleMaps[0],
+        imgGrp: resources.googleMaps,
+        discription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
         siteUrl: "http://lindseyljackson.com/Sites/Brooklyn-Arts/root/collection.html",
     },
     {
         title: "Phaser 2 game",
-        discription: "here is another discription",
-        imgSrc: images[0],
-        imgGrp: images,
+        discription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
+        imgSrc: resources.cyborgNinja[0],
+        imgGrp: resources.cyborgNinja,
     },
     {
         title: "Quiz App",
         discription: "A quiz app made with Jquery and Bootstrap",
-        imgSrc: resources[0],
-        imgGrp: images,
+        imgSrc: resources.googleMaps[0],
+        imgGrp: resources.googleMaps,
 
     }
 
