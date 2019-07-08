@@ -8,23 +8,7 @@ library.add(fab);
 const iconGrp = ['instagram','linkedin'];
 
 class Footer extends Component{
-constructor(props){
-  super(props);
-  this.state = {opacity: 1};
-  this.goToLink = this.goToLink.bind(this);
-  this.hoverOn = this.hoverOn.bind(this);
-  this.hoverOff = this.hoverOff.bind(this);
 
-}
-
-hoverOn(){
-this.setState({opacity: .5 });
-
-}
-
-hoverOff(){
-  this.setState({opacity: 1});
-}
 
   goToLink(url){
     window.open(url,'_blank');

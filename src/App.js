@@ -4,6 +4,7 @@ import Nav from "./navbar.js";
 import Portfolio from "./portfolio.js";
 import Footer from "./footer.js";
 import Plx from 'react-plx';
+import { Button } from "reactstrap";
 import resources from './asset-list.js';
 
 const parallaxData = [
@@ -68,6 +69,7 @@ class App extends Component{
         <section className="b-container">
         <h3 className="myName-title">Lindsey Jackson's</h3>
         <h5 className="myName-subtitle">Portfolio</h5>
+        <Button className="about-btn" outline color="primary">About</Button>
         <h1 className="splash-blerb">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</h1>
         </section>
 

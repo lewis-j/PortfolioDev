@@ -8,6 +8,7 @@ $fontTitle: black;
 $subtitle: grey;
 $imgFont: white;
 $iconColor: black;
+$buttonClr: white;
 
 $Header-font: 'DM Serif Text', serif;
 
@@ -147,4 +148,18 @@ color: $imgFont;
 
 .social-icon:hover {
   opacity: .4;
+}
+
+.about-btn {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  color: $buttonClr;
+  border-color: $buttonClr;
+}
+
+.about-btn:hover{
+  background-color: $buttonClr;
+  color: black;
+  border-color: black;
 }
