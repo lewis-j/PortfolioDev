@@ -1,12 +1,19 @@
 
+@import url('https://fonts.googleapis.com/css?family=DM+Serif+Text&display=swap');
+
 
 $bg: black;
 $banners: black;
 $fontTitle: black;
 $subtitle: grey;
 $imgFont: white;
+$iconColor: black;
+
+$Header-font: 'DM Serif Text', serif;
+
 body{
     background: $bg;
+    font-family: $Header-font;
 }
 
 .myName-title{
@@ -122,17 +129,22 @@ color: $imgFont;
     padding-bottom: 2px;
     margin: 10px auto;
     width: fit-content;
+    width: -moz-fit-content;
     font-weight: 600;
     font-size: 37px;
 
 }
 
-.instagram-icon:visited {
-  color:black;
-  margin-left: 5px;
+.social-icon {
+  position: relative;
+  color: $iconColor
+
 }
 
-.instagram-icon:hover {
-  color:white;
-  margin-left: 5px;
+.social-icon:visited {
+  color: $iconColor
+}
+
+.social-icon:hover {
+  opacity: .4;
 }

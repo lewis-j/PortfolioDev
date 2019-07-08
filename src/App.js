@@ -58,7 +58,6 @@ class App extends Component{
     return(
 
         <div>
-
         <Plx
         className='MyAwesomeParallax'
         parallaxData={ parallaxData }
@@ -70,20 +69,15 @@ class App extends Component{
         <h3 className="myName-title">Lindsey Jackson's</h3>
         <h5 className="myName-subtitle">Portfolio</h5>
         <h1 className="splash-blerb">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</h1>
-
-
         </section>
 
         <Plx
         className='plx-title'
-        onPlxEnd = { ()=>{console.log("plx 2 ran")}}
         parallaxData={ plxTitle }
         animateWhenNotInViewport = {true}
       >
         <h1 className="portfolio-title">My Projects</h1>
       </Plx>
-
-
 
         <Portfolio  />
         <Footer />
