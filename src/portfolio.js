@@ -103,19 +103,16 @@ export default class Portfolio extends Component{
     render() {
 
     return(
-      <div>
-    <Container  className="portfolio" >
 
-        <Row>
+
+        <Row className="portfolio">
         {
         portfolioData.map((item, index) => <Col key = {index} md="4" sm="6" ><Card item = {item} i = {index} toggleModal = { this.toggleOn } /> </Col>)
          }
+
+           <ModalProject index = { this.state.index } subIndex = { this.state.subIndex } next = { this.next } previous = { this.previous } updateIndex = {this.updateIndex} mod = { this.state.modal } toggle = { this.toggle } data = {this.state.modalItem} />
         </Row>
-        </Container>
 
-        <ModalProject index = { this.state.index } subIndex = { this.state.subIndex } next = { this.next } previous = { this.previous } updateIndex = {this.updateIndex} mod = { this.state.modal } toggle = { this.toggle } data = {this.state.modalItem} />
-
-</div>
 
     )
     }

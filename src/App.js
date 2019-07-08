@@ -4,7 +4,7 @@ import Nav from "./navbar.js";
 import Portfolio from "./portfolio.js";
 import Footer from "./footer.js";
 import Plx from 'react-plx';
-import { Button } from "reactstrap";
+import { Button, Container, Row, Col } from "reactstrap";
 import resources from './asset-list.js';
 
 const parallaxData = [
@@ -59,6 +59,8 @@ class App extends Component{
     return(
 
         <div>
+        <Container fluid = {true} className="jumbo-container">
+        <Row>
         <Plx
         className='MyAwesomeParallax'
         parallaxData={ parallaxData }
@@ -72,6 +74,8 @@ class App extends Component{
         <Button className="about-btn" outline color="primary">About</Button>
         <h1 className="splash-blerb">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</h1>
         </section>
+        </Row>
+        </ Container>
 
         <Plx
         className='plx-title'
@@ -80,8 +84,9 @@ class App extends Component{
       >
         <h1 className="portfolio-title">My Projects</h1>
       </Plx>
-
+       <Container>
         <Portfolio  />
+        </Container>
         <Footer />
         </div>
     );
