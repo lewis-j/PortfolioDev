@@ -55,41 +55,57 @@ const plxTitle = [
 
 class App extends Component{
 
+  constructor(props){
+    super(props);
+    this.state= {
+      isAbout : false
+    }
+
+    this.aboutSection = this.aboutSection.bind(this);
+  }
+
+  aboutSection(){
+    this.setState({ isAbout : true });
+  }
+
   render(){
-    return(
+    if(!this.state.isAbout){
+      return(
 
-        <div>
-        <Container fluid = {true} className="jumbo-container">
-        <Row>
-        <Plx
-        className='MyAwesomeParallax'
-        parallaxData={ parallaxData }
-        animateWhenNotInViewport = {true}
-      >
-        <img className="banner-img" src={ resources.myPortrait }/>
-      </Plx>
-        <section className="b-container">
-        <h3 className="myName-title">Lindsey Jackson's</h3>
-        <h5 className="myName-subtitle">Portfolio</h5>
-        <Button className="about-btn" outline color="primary">About</Button>
-        <h1 className="splash-blerb">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</h1>
-        </section>
-        </Row>
-        </ Container>
+          <div>
+          <Container fluid = {true} className="jumbo-container">
+          <Row>
+          <Plx
+          className='MyAwesomeParallax'
+          parallaxData={ parallaxData }
+          animateWhenNotInViewport = {true}
+        >
+          <img className="banner-img" src={ resources.myPortrait }/>
+        </Plx>
+          <section className="b-container">
+          <h3 className="myName-title">Lindsey Jackson's</h3>
+          <h5 className="myName-subtitle">Portfolio</h5>
+          <Button className="about-btn" outline color="primary" onClick={ this.aboutSection } >About</Button>
+          <h1 className="splash-blerb">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</h1>
+          </section>
+          </Row>
+          </ Container>
 
-        <Plx
-        className='plx-title'
-        parallaxData={ plxTitle }
-        animateWhenNotInViewport = {true}
-      >
-        <h1 className="portfolio-title">My Projects</h1>
-      </Plx>
-       <Container>
-        <Portfolio  />
-        </Container>
-        <Footer />
-        </div>
-    );
+          <Plx
+          className='plx-title'
+          parallaxData={ plxTitle }
+          animateWhenNotInViewport = {true}
+        >
+          <h1 className="portfolio-title">My Projects</h1>
+        </Plx>
+         <Container>
+          <Portfolio  />
+          </Container>
+          <Footer />
+          </div>
+      );
+    }
+
   }
 }
 
