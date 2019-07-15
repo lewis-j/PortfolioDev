@@ -8,24 +8,50 @@ import resources from './asset-list.js';
 const portfolioData = [
     {
         title: "Brooklyn Arts Museum",
-        imgSrc: resources.googleMaps[0],
-        imgGrp: resources.googleMaps,
+        imgSrc: resources.brooklynMuseum[0],
+        imgGrp: resources.brooklynMuseum,
         discription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
         siteUrl: "http://lindseyljackson.com/Sites/Brooklyn-Arts/root/collection.html",
     },
     {
-        title: "Phaser 2 game",
+        title: "SRJC Pitch Tracker",
         discription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
-        imgSrc: resources.cyborgNinja[0],
-        imgGrp: resources.cyborgNinja,
+        imgSrc: resources.pitchApp[0],
+        imgGrp: resources.pitchApp,
+        siteUrl:"https://www.lindseyljackson.com/Sites/pitchApp/"
     },
     {
-        title: "Quiz App",
-        discription: "A quiz app made with Jquery and Bootstrap",
+        title: "Google Maps API",
+        discription: "A webpage that displays visitors statistics for National Parks. The website uses the gmap javascript API to render a map that show your distance from each National Park. I'm also using D3.js to create the pie and bar charts that compare top visitors statistics. ",
         imgSrc: resources.googleMaps[0],
         imgGrp: resources.googleMaps,
+        siteUrl: "https://www.lindseyljackson.com/Sites/gmapsApi/"
 
-    }
+    },
+    {
+        title: "Javascript Quiz Plugin",
+        discription: "A webpage that displays visitors statistics for National Parks. The website uses the gmap javascript API to render a map that show your distance from each National Park. I'm also using D3.js to create the pie and bar charts that compare top visitors statistics. ",
+        imgSrc: resources.quizPlugin[0],
+        imgGrp: resources.quizPlugin,
+        siteUrl: "https://www.lindseyljackson.com/Sites/QuizApp/quiz_app_2.html"
+
+    },
+    {
+          title: "Cyborg Ninja",
+          discription: "A webpage that displays visitors statistics for National Parks. The website uses the gmap javascript API to render a map that show your distance from each National Park. I'm also using D3.js to create the pie and bar charts that compare top visitors statistics. ",
+          imgSrc: resources.cyborgNinja[0],
+          imgGrp: resources.cyborgNinja,
+          siteUrl: "https://www.lindseyljackson.com/Sites/CyborgNinja/"
+
+      },
+      {
+            title: "Falling Moons",
+            discription: "A webpage that displays visitors statistics for National Parks. The website uses the gmap javascript API to render a map that show your distance from each National Park. I'm also using D3.js to create the pie and bar charts that compare top visitors statistics. ",
+            imgSrc: resources.fallingMoons[0],
+            imgGrp: resources.fallingMoons,
+            siteUrl: "https://www.lindseyljackson.com/Sites/Falling%20Moons/"
+
+        }
 
 ];
 
@@ -43,7 +69,7 @@ export default class Portfolio extends Component{
     this.toggleOn = this.toggleOn.bind(this);
     this.next = this.next.bind(this);
     this.previous = this.previous.bind(this);
-    this.goToIndex = this.goToIndex.bind(this);
+    this.updateIndex = this.updateIndex.bind(this);
   }
 
   toggle() {
@@ -94,8 +120,8 @@ export default class Portfolio extends Component{
 
   }
 
-  goToIndex(newIndex) {
-  this.setState({ subIndex: nextIndex });
+  updateIndex(newIndex) {
+  this.setState({ subIndex: newIndex });
   }
 
 

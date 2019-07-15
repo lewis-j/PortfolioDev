@@ -15,7 +15,7 @@ class ModalProject extends React.Component {
             {this.props.data.discription}
           </ModalBody>
           <ModalFooter>
-            <Button color="primary" onClick={this.props.toggle}>Do Something</Button>{' '}
+            <Button color="primary" onClick={()=>{  window.open( this.props.data.siteUrl ,'_blank');   }}> Visit {this.props.data.title} </Button>{' '}
             <Button color="secondary" onClick={this.props.toggle}>Cancel</Button>
           </ModalFooter>
         </Modal>

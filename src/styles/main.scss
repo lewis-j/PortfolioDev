@@ -1,14 +1,12 @@
-
 @import url('https://fonts.googleapis.com/css?family=DM+Serif+Text&display=swap');
 
 
 $bg: black;
-$banners: black;
+$imgTxtDark: #6e6e6e;
 $fontTitle: black;
-$subtitle: grey;
+$imgTxtLight: #c4c4c4;
 $imgFont: white;
 $iconColor: black;
-$buttonClr: white;
 $blerbColor: black;
 
 $Header-font: 'DM Serif Text', serif;
@@ -26,13 +24,13 @@ body{
   position: absolute;
   top:20px;
   left: 20px;
-  color:$banners;
+  color:$imgTxtDark;
 }
 .myName-subtitle{
   position: absolute;
   top:50px;
   left: 24px;
-  color: $subtitle;
+  color: $imgTxtLight;
 }
 
 img.banner-img {
@@ -61,7 +59,7 @@ img.banner-img {
 
 .b-container {
   position: relative;
-    height: 800px;
+    height: 100vh;
     width: 100%;
 }
 
@@ -165,14 +163,24 @@ color: $imgFont;
   position: absolute;
   right: 10px;
   top: 10px;
-  color: $buttonClr;
-  border-color: $buttonClr;
+  color: $imgTxtLight;
+  border-color: $imgTxtLight;
 }
 
 .about-btn:hover{
-  background-color: $buttonClr;
+  background-color: $imgTxtLight;
   color: black;
   border-color: black;
+}
+/*BOOTSTRAP CLASS ALTERATIONS*/
+
+.carousel-indicators li {
+
+background-color: #3b3b3b;
+}
+
+.card {
+  margin-top: 25px;
 }
 
 /* Custom, iPhone Retina */
@@ -181,7 +189,7 @@ color: $imgFont;
       width: auto;
       font-size: 24px;
       top:290px;
-      color:white;
+      color:black;
     }
 
     .portfolio-title{
@@ -208,7 +216,7 @@ color: $imgFont;
     width: 750px;
     font-size: 35px;
     top:150px;
-    
+
   }
 
 

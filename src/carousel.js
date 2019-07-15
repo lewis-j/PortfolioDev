@@ -37,7 +37,7 @@ this.props.previous();
 
   goToIndex(newIndex) {
     if (this.animating) return;
-  this.props.goToIndex(newIndex);
+  this.props.updateIndex(newIndex);
   }
 
   render() {
@@ -50,7 +50,7 @@ this.props.previous();
           key={"carousel"+index}
         >
           <img src={item} alt={this.props.items.title} className = "carousel-img"/>
-          <CarouselCaption captionText={this.props.items.title} captionHeader={this.props.items.title} />
+          
         </CarouselItem>
       );
     });
@@ -61,6 +61,7 @@ this.props.previous();
         next={this.next}
         previous={this.previous}
       >
+      {console.log("ITEMS:",this.props.items.imgGrp )}
         <CarouselIndicators items={this.props.items.imgGrp} activeIndex={activeIndex} onClickHandler={this.goToIndex} />
         {slides}
         <CarouselControl direction="prev" directionText="Previous" onClickHandler={this.previous} />
