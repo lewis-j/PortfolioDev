@@ -65,7 +65,7 @@ class App extends Component{
   }
 
   aboutSection(){
-    this.setState({ isAbout : true });
+    this.setState(prevState => ({ isAbout: !prevState.isAbout }));
   }
 
   render(){
@@ -104,6 +104,17 @@ class App extends Component{
           <Footer />
           </div>
       );
+    }else{
+      return(
+      <Container fluid = {true}>
+        <Row className="header">
+
+        <h3 className="myName-title">Lindsey Jackson's</h3>
+         <Button className="about-btn" outline color="primary" onClick={ this.aboutSection } >My Portfolio</Button>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam
+        </Row>
+      </Container>
+    );
     }
 
   }
