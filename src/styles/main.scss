@@ -14,6 +14,10 @@ $Header-font: 'DM Serif Text', serif;
 body{
     background: $bg;
     font-family: $Header-font;
+    height: 100%;
+}
+html{
+    height: 100%;
 }
 
 .jumbo-container{
@@ -88,7 +92,7 @@ position: absolute;
 width: 200px;
 font-size: 30px;
 margin: auto;
-top:20px;
+text-align: center;
 left: 0;
 right: 0;
 color: $imgFont;
@@ -97,8 +101,9 @@ color: $imgFont;
 
 .image-holder {
   height: 100%;
-  width: 100%;
-  position:relative;
+   display: flex;
+   align-items: center;
+   justify-content: center;
 }
 .image-holder:before {
   content: "";
