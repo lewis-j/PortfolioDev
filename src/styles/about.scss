@@ -11,31 +11,127 @@
   background-color: white;
 }
 
-.about-img {
-  position: absolute;
-width: 50vw;
-right: 0;
-z-index: -1;
-}
 
-.about-content{
-  height: fit-content;
+
+/* Custom, iPhone Retina */
+@media only screen and (min-width : 320px) {
+  .form-plx{
     position: absolute;
-    width: 50%;
-    top: 154px;
-    left: 50px;
-    font-size: 23px;
-}
-
+    left: -85px;
+  }
+  .about-footer{
+    height:900px;
+  }
 .about-title{
-  position: absolute;
-font-size: 102px;
-text-shadow: 1px 2px grey;
-left: 59px;
-top: 23px;
+position: relative;
+margin: 75px auto 5px;
+font-size: 50px;
+text-shadow: 1px 1px grey;
+}
+.about-content{
+  padding: 30px;
+font-size: 13px;
 }
 
-.contact-title {
+.about-img{
+  width: 100%;
+  overflow:hidden;
+}
+
+.about-img img{
+  width: 100%;
+}
+
+.contact-title{
+  margin-top: 70px;
   color:white;
-  font-size: 85px;
+  font-size: 25px;
+}
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (min-width : 480px) {
+
+}
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+  .header{
+    height: 560px;
+  }
+.about-title{
+  margin-left: 75px;
+  font-size:70px;
+}
+.about-content{
+  width: 65%;
+  font-size: 16px;
+  margin-top: -200px;
+}
+
+.about-img{
+  position: absolute;
+  width: 380px;
+z-index: -1;
+right: 31px;
+bottom: 120px;
+}
+
+.about-img img{
+display: block;
+width: 470px;
+
+}
+
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+  .form-plx{
+    position: static;
+    left: 0px;
+    width: 500px;
+  }
+
+  .about-footer{
+    height:1100px;
+  }
+  .about-title{
+    font-size: 100px;
+  }
+  .about-content {
+      width: 72%;
+      font-size: 18px;
+      margin-top: -200px;
+  }
+  .about-img{
+    top: 82px;
+   right: 30px;
+
+  }
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+.header{
+  height: 740px;
+}
+.about-title{
+  font-size: 120px;
+  }
+  .about-content{
+    width: 80%;
+    font-size: 30px;
+  }
+.about-img img{
+  width: 750px;
+}
+
+.about-img{
+  height: 650px;
+  width: 580px;
+}
+.contact-title{
+  font-size: 30px;
+}
 }

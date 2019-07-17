@@ -4,6 +4,7 @@ import Nav from "./navbar.js";
 import Portfolio from "./portfolio.js";
 import Footer from "./footer.js";
 import Plx from 'react-plx';
+import ContactForm from './contact.js';
 import { Button, Container, Row, Col } from "reactstrap";
 import resources from './asset-list.js';
 
@@ -133,17 +134,20 @@ class App extends Component{
          <div className="about-content">
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam
 </div>
-<img className = "about-img" src={ resources.aboutImg }/>
+<figure className = "about-img" >
+<img src={ resources.aboutImg }/>
+</figure>
         </Row>
-        <Row>
+        <Row className = "about-footer">
         <Plx
-        className='MyAwesomeParallax'
+        className='form-plx'
         parallaxData={ plxAbout }
         animateWhenNotInViewport = {true}
       >
       <div className = "contact-title">
       Contact Me
       </div>
+      <ContactForm/>
       </Plx>
         </Row>
       </Container>
