@@ -16,21 +16,10 @@ body{
     font-family: $Header-font;
     height: 100%;
 }
-
-.header {
-  height: 500px;
-  clip-path: polygon(
-    0 0,
-    100% 0,
-    100% 100%,
-    0 calc(100% - 6vw)
-  );
-
-  background-color: white;
-}
 html{
     height: 100%;
 }
+
 
 .jumbo-container{
   background-color: white;
@@ -75,7 +64,7 @@ img.banner-img {
 
 .b-container {
   position: relative;
-    height: 100vh;
+    height: 150vh;
     width: 100%;
 }
 

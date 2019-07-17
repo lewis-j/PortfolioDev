@@ -53,6 +53,25 @@ const plxTitle = [
   },
 ];
 
+const plxAbout = [
+  {
+    start: 0,
+    duration: 400,
+    properties: [
+      {
+        startValue: 0,
+        endValue: 1,
+        property: 'opacity',
+      },
+      {
+      startValue: 0,
+      endValue:  150,
+      property: "translateX"
+    }
+  ]
+}
+];
+
 class App extends Component{
 
   constructor(props){
@@ -109,9 +128,23 @@ class App extends Component{
       <Container fluid = {true}>
         <Row className="header">
 
-        <h3 className="myName-title">Lindsey Jackson's</h3>
+        <h3 className="about-title">About Me</h3>
          <Button className="about-btn" outline color="primary" onClick={ this.aboutSection } >My Portfolio</Button>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam
+         <div className="about-content">
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam
+</div>
+<img className = "about-img" src={ resources.aboutImg }/>
+        </Row>
+        <Row>
+        <Plx
+        className='MyAwesomeParallax'
+        parallaxData={ plxAbout }
+        animateWhenNotInViewport = {true}
+      >
+      <div className = "contact-title">
+      Contact Me
+      </div>
+      </Plx>
         </Row>
       </Container>
     );

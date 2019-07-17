@@ -1,4 +1,6 @@
 .header {
+
+  height: 650px;
   clip-path: polygon(
     0 0,
     100% 0,
@@ -9,6 +11,31 @@
   background-color: white;
 }
 
-.portfolio-title {
-  background-color: green;
+.about-img {
+  position: absolute;
+width: 50vw;
+right: 0;
+z-index: -1;
+}
+
+.about-content{
+  height: fit-content;
+    position: absolute;
+    width: 50%;
+    top: 154px;
+    left: 50px;
+    font-size: 23px;
+}
+
+.about-title{
+  position: absolute;
+font-size: 102px;
+text-shadow: 1px 2px grey;
+left: 59px;
+top: 23px;
+}
+
+.contact-title {
+  color:white;
+  font-size: 85px;
 }

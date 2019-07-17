@@ -26,10 +26,12 @@
     import fallM2 from './img/moons/falling_moons (2).png';
     import fallM3 from './img/moons/falling_moons (3).png';
     import fallM4 from './img/moons/falling_moons (4).png';
+    import about_img from './img/blackWhite.png';
 
 
 const resources = {
      myPortrait : portrait,
+     aboutImg: about_img,
      pitchApp:[pa_main,pa_menu,pa_stat1,pa_stat2,pa_stat3],
      brooklynMuseum:[bma_front, bma_collection, bma_art],
      googleMaps : [gmap_s,gmap1,gmap2,gmap3],
