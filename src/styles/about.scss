@@ -11,11 +11,11 @@
 }
 .about-content{
   animation-name: slide-in;
-  animation-duration: 3s;
+  animation-duration: 1.5s;
 }
 @keyframes slide-in {
-  from{ transform: translateX(-500px);}
-  to{transform: translateX(0px)}
+  from{ transform: translateX(-400px); opacity: 0 ;}
+  to{transform: translateX(0px); opacity: 1; }
 }
 .form-completed{
   -webkit-animation-name: shrink; /* Safari 4.0 - 8.0 */
