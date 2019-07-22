@@ -1,5 +1,4 @@
 .header {
-
   height: 650px;
   clip-path: polygon(
     0 0,
@@ -10,7 +9,31 @@
 
   background-color: white;
 }
+.about-content{
+  animation-name: slide-in;
+  animation-duration: 3s;
+}
+@keyframes slide-in {
+  from{ transform: translateX(-500px);}
+  to{transform: translateX(0px)}
+}
+.form-completed{
+  -webkit-animation-name: shrink; /* Safari 4.0 - 8.0 */
+  -webkit-animation-duration: 2s; /* Safari 4.0 - 8.0 */
+  animation-name: shrink;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
 
+}
+
+
+@keyframes shrink {
+from {
+       transform: rotate(0deg) scale(1);}
+to {
+    transform: rotate(200deg) scale(0);}
+
+}
 
 
 /* Custom, iPhone Retina */

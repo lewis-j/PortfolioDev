@@ -1,4 +1,5 @@
-  import gmaps_imgs from './img/leaves.jpg';
+//resours imports
+   import gmaps_imgs from './img/leaves.jpg';
     import cyborg_ninja from './img/moreleaves.jpg';
     import portrait from './img/uk_portrait.jpg';
     import bma_front from './img/BMA/BMA_front.png';
@@ -28,7 +29,7 @@
     import fallM4 from './img/moons/falling_moons (4).png';
     import about_img from './img/blackWhite.png';
 
-
+//Global resource object
 const resources = {
      myPortrait : portrait,
      aboutImg: about_img,

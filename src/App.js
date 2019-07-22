@@ -144,9 +144,6 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         parallaxData={ plxAbout }
         animateWhenNotInViewport = {true}
       >
-      <div className = "contact-title">
-      Contact Me
-      </div>
       <ContactForm/>
       </Plx>
         </Row>
