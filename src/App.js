@@ -10,8 +10,8 @@ import resources from './asset-list.js';
 
 const parallaxData = [
   {
-    start: 100,
-    duration: 200,
+    start: 0,
+    duration: 100,
     properties: [
       {
         startValue: 1,
@@ -24,8 +24,8 @@ const parallaxData = [
 
 const plxTitle = [
   {
-    start: 0,
-    duration: 400,
+    start: 450,
+    duration: 100,
     properties: [
       {
         startValue: 0,
@@ -33,27 +33,32 @@ const plxTitle = [
         property: 'opacity',
       },
       {
-      startValue: 0,
-      endValue: -150,
+      startValue: 30,
+      endValue: -100,
       property: "translateY"
-    },
-    {
-       startValue: 1,
-       endValue: 1.5,
-       property: "scale"
-     },{
-        startValue: 1,
-        endValue: 1.5,
-        property: "scale"
-      }, {
-        startValue: 20,
-        endValue: 0,
-        property: "blur"
-      }
+    }
     ],
   },
 ];
 
+const plxNav = [
+  {
+    start:300,
+    duration: 100,
+    properties: [
+      {
+        startValue: 'rgba(255,255,255,0)',
+        endValue: 'rgba(255,255,255,1)',
+        property: 'backgroundColor'
+      },
+      {
+        startValue: 'rgba(230, 233, 233,0)',
+        endValue: 'rgba(230, 233, 233,1)',
+        property: 'borderBottomColor'
+      }
+    ],
+  },
+];
 const plxAbout = [
   {
     start: 0,
@@ -96,6 +101,14 @@ class App extends Component{
           <Container fluid = {true} className="jumbo-container">
           <Row>
           <Plx
+            className="navBar"
+            parallaxData={ plxNav }
+            >
+            <h3 className="myName-title">Lindsey Jackson's</h3>
+            <h5 className="myName-subtitle">Portfolio</h5>
+            <Button className="about-btn" outline color="primary" onClick={ this.aboutSection } >About</Button>
+            </Plx>
+          <Plx
           className='MyAwesomeParallax'
           parallaxData={ parallaxData }
           animateWhenNotInViewport = {true}
@@ -103,22 +116,19 @@ class App extends Component{
           <img className="banner-img" src={ resources.myPortrait }/>
         </Plx>
           <section className="b-container">
-          <h3 className="myName-title">Lindsey Jackson's</h3>
-          <h5 className="myName-subtitle">Portfolio</h5>
-          <Button className="about-btn" outline color="primary" onClick={ this.aboutSection } >About</Button>
           <h1 className="splash-blerb">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</h1>
           </section>
           </Row>
           </ Container>
-
-          <Plx
-          className='plx-title'
-          parallaxData={ plxTitle }
-          animateWhenNotInViewport = {true}
-        >
-          <h1 className="portfolio-title">My Projects</h1>
-        </Plx>
          <Container>
+         <Plx
+         className='plx-title'
+         parallaxData={ plxTitle }
+         animateWhenNotInViewport = {true}
+       >
+        <img className="srjc-logo" src = { resources.srjcLogo }/>
+         <h1 className="portfolio-title">Santa Rosa Jr College <br/> Projects</h1>
+       </Plx>
           <Portfolio  />
           </Container>
           <Footer />
@@ -126,7 +136,7 @@ class App extends Component{
       );
     }else{
       return(
-      <Container fluid = {true}>
+      <Container className="about-container" fluid = {true}>
         <Row className="header">
 
         <h3 className="about-title">About Me</h3>

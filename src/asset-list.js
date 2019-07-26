@@ -28,10 +28,13 @@
     import fallM3 from './img/moons/falling_moons (3).png';
     import fallM4 from './img/moons/falling_moons (4).png';
     import about_img from './img/blackWhite.png';
+    import srjc_logo from './img/SRJC_LOGO.png';
+
 
 //Global resource object
 const resources = {
      myPortrait : portrait,
+     srjcLogo : srjc_logo,
      aboutImg: about_img,
      pitchApp:[pa_main,pa_menu,pa_stat1,pa_stat2,pa_stat3],
      brooklynMuseum:[bma_front, bma_collection, bma_art],
