@@ -122,7 +122,11 @@ color: $imgFont;
   bottom: 0;
   left: 0;
   right: 0;
+<<<<<<< HEAD
   background: rgba(209, 209, 209, 0.5);
+=======
+  background: rgba(0,255,255, 0.5);
+>>>>>>> background-fade-nav
   transition: all .3s linear;
 }
 .image-holder:hover:before {
