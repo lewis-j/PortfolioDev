@@ -24,7 +24,7 @@ const parallaxData = [
 
 const plxTitle = [
   {
-    start: 450,
+    start: ".portfolio",
     duration: 100,
     properties: [
       {
@@ -43,7 +43,7 @@ const plxTitle = [
 
 const plxNav = [
   {
-    start:300,
+    start:50,
     duration: 100,
     properties: [
       {
@@ -105,7 +105,7 @@ class App extends Component{
             parallaxData={ plxNav }
             >
             <h3 className="myName-title">Lindsey Jackson's</h3>
-            <h5 className="myName-subtitle">Portfolio</h5>
+            <h5 className="myName-subtitle">UI/UX Designer</h5>
             <Button className="about-btn" outline color="primary" onClick={ this.aboutSection } >About</Button>
             </Plx>
           <Plx
@@ -157,6 +157,9 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
       <ContactForm/>
       </Plx>
         </Row>
+        <Row>
+            <Footer />
+            </Row>
       </Container>
     );
     }

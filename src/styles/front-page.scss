@@ -122,12 +122,14 @@ color: $imgFont;
   bottom: 0;
   left: 0;
   right: 0;
-<<<<<<< HEAD
   background: rgba(209, 209, 209, 0.5);
-=======
-  background: rgba(0,255,255, 0.5);
->>>>>>> background-fade-nav
   transition: all .3s linear;
+}
+
+.image-holder:hover{
+  transform: scale(1.1);
+  z-index: 10;
+  box-shadow: 0px 0px 5px 1px #888888;
 }
 .image-holder:hover:before {
   background: none;
@@ -148,22 +150,14 @@ color: $imgFont;
 .footer {
   background-color: ghostwhite;
   margin-top: 68px;
+  width:100%;
 }
 
-.follow-txt {
-  border-bottom: 1.5px solid red;
-    padding-bottom: 2px;
-    margin: 10px auto;
-    width: fit-content;
-    width: -moz-fit-content;
-    font-weight: 600;
-    font-size: 37px;
-
-}
 
 .social-icon {
   position: relative;
-  color: $iconColor
+  color: $iconColor;
+  margin:4px;
 
 }
 
@@ -244,7 +238,7 @@ background-color: #3b3b3b;
 
   .b-container{
 
-    height: 1000px;
+    height: 120vh;
   }
 
 
@@ -252,7 +246,7 @@ background-color: #3b3b3b;
 
 /* Medium Devices, Desktops */
 @media only screen and (min-width : 992px) {
-
+    height: 500px;
 }
 
 /* Large Devices, Wide Screens */

@@ -17,10 +17,10 @@ class Footer extends Component{
 render(){
   return(
   <div className="footer">
-  <p className="follow-txt">Follow Me on Social Media</p>
   <section className="icon-grp">
-    <FontAwesomeIcon className="social-icon" onClick={ ()=> {this.goToLink('https://www.linkedin.com/in/lindseyljackson') }} icon={['fab', 'linkedin']}  size="6x"/>
-    <FontAwesomeIcon className="social-icon" onClick={ ()=> {this.goToLink('https://www.instagram.com/lindseyjackson88/?hl=en') }} icon={['fab', 'instagram']} size="6x" />
+    <FontAwesomeIcon className="social-icon" onClick={ ()=> {this.goToLink('https://www.linkedin.com/in/lindseyljackson') }} icon={['fab', 'linkedin']}  size="4x"/>
+    <FontAwesomeIcon className="social-icon" onClick={ ()=> {this.goToLink('https://www.instagram.com/lindseyjackson88/?hl=en') }} icon={['fab', 'instagram']} size="4x" />
+      <FontAwesomeIcon className="social-icon" onClick={ ()=> {this.goToLink('https://github.com/lewis-j/') }} icon={['fab', 'github']} size="4x" />
     </section>
 
 
