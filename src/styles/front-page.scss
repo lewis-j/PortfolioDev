@@ -7,6 +7,13 @@ html{
 }
 
 
+
+
+.show-more{
+   background-color: white;
+   color: black;
+   border: none;
+}
 .jumbo-container{
   background-color: white;
 }
@@ -58,6 +65,11 @@ img.banner-img {
   position: relative;
     height: 1000px;
     width: 100%;
+}
+
+.port-section-header{
+  margin:15px  auto 5px;
+  font-family: $srjc-font;
 }
 .portfolio{
   background-color: black;

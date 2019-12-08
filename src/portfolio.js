@@ -5,14 +5,7 @@ import ModalProject from './modal.js';
 import resources from './asset-list.js';
 
 
-const portfolioData = [
-    {
-        title: "Brooklyn Arts Museum",
-        imgSrc: resources.brooklynMuseum[0],
-        imgGrp: resources.brooklynMuseum,
-        discription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
-        siteUrl: "http://lindseyljackson.com/Sites/Brooklyn-Arts/root/collection.html",
-    },
+const webAppData = [
     {
         title: "SRJC Pitch Tracker",
         discription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
@@ -22,7 +15,7 @@ const portfolioData = [
     },
     {
         title: "Google Maps API",
-        discription: "A webpage that displays visitors statistics for National Parks. The website uses the gmap javascript API to render a map that show your distance from each National Park. I'm also using D3.js to create the pie and bar charts that compare top visitors statistics. ",
+        discription: "A webpage/webapp that displays visitors statistics for National Parks. The website uses the gmap javascript API to render a map that show your distance from each National Park. I'm also using D3.js to create the pie and bar charts that compare top visitors statistics. ",
         imgSrc: resources.googleMaps[0],
         imgGrp: resources.googleMaps,
         siteUrl: "https://www.lindseyljackson.com/Sites/gmapsApi/"
@@ -38,7 +31,7 @@ const portfolioData = [
     },
     {
           title: "Cyborg Ninja",
-          discription: "A webpage that displays visitors statistics for National Parks. The website uses the gmap javascript API to render a map that show your distance from each National Park. I'm also using D3.js to create the pie and bar charts that compare top visitors statistics. ",
+          discription: "This is the final project that I submitted for a game development course. It resembles a traditional 2d  platformed except that it incorporates simple flight controls based on a velocity by rotation method within the phaser2.js library.  There were two challenges I faced when developing this game.  The first was making the A.I.'s projectiles track the main player. The second was figuring out a way to lower the amount of collision detection by enemies as this is a very expensive operation. In order to solve the first issue I used the trigonometric inverse tangent function that takes in the coordinates of the enemy and of the player to calculate the angle the enemy needed to shoot a projectile.  This also meant that I needed to make the arm of the enemy move on a pivot in order to make the animation more fluid. This was done using the same data returned from the inverse tangent function. The second challenge I solved by implementing a quad tree. Only enemies within the same quadrant as the player would execute collision detection in the game loop.  This significantly reduced  lag I was experiencing .  All in all this was a very satisfying and fun experience. ",
           imgSrc: resources.cyborgNinja[0],
           imgGrp: resources.cyborgNinja,
           siteUrl: "https://www.lindseyljackson.com/Sites/CyborgNinja/"
@@ -46,7 +39,7 @@ const portfolioData = [
       },
       {
             title: "Falling Moons",
-            discription: "A webpage that displays visitors statistics for National Parks. The website uses the gmap javascript API to render a map that show your distance from each National Park. I'm also using D3.js to create the pie and bar charts that compare top visitors statistics. ",
+            discription: "A game made using the phaser2.js library. The goal is to shoot guided projectiles at moons falling to the ground. The game play gets increasingly difficult as the rate of falling moon increases with time. Overall this game was a nice experiment in using interval functions and math.random functions to create compelling game play.",
             imgSrc: resources.fallingMoons[0],
             imgGrp: resources.fallingMoons,
             siteUrl: "https://www.lindseyljackson.com/Sites/Falling%20Moons/"
@@ -54,6 +47,25 @@ const portfolioData = [
         }
 
 ];
+
+const websiteData = [
+  {
+      title: "Brooklyn Arts Museum",
+      discription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
+      imgSrc: resources.brooklynMuseum[0],
+      imgGrp: resources.brooklynMuseum,
+      siteUrl: "http://lindseyljackson.com/Sites/Brooklyn-Arts/root/collection.html",
+  },
+  {
+      title: "Garden Grill BBQ",
+      discription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
+      imgSrc: resources.gardenGrill[0],
+      imgGrp: resources.gardenGrill,
+      siteUrl: "https://gardengrillbbq.com/",
+  }
+];
+
+const portfolioData = [...webAppData, ...websiteData];
 
 export default class Portfolio extends Component{
 
@@ -63,13 +75,15 @@ export default class Portfolio extends Component{
       modal: false,
       modalItem: {},
       index: 0,
-      subIndex: 0
+      subIndex: 0,
+      toggleText: false
     };
     this.toggle = this.toggle.bind(this);
     this.toggleOn = this.toggleOn.bind(this);
     this.next = this.next.bind(this);
     this.previous = this.previous.bind(this);
     this.updateIndex = this.updateIndex.bind(this);
+    this.toggleShow = this.toggleShow.bind(this);
   }
 
   toggle() {
@@ -88,6 +102,11 @@ export default class Portfolio extends Component{
     }));
   }
 
+  toggleShow(){
+    this.setState(prevState=> ({ toggleText: !prevState.toggleText }));
+    console.log("toggleshow", this.state.toggleText);
+  }
+
   next(){
 
     const isLast = (this.state.subIndex === this.state.modalItem.imgGrp.length - 1 );
@@ -95,7 +114,8 @@ export default class Portfolio extends Component{
   this.setState({ subIndex: nextIndex },()=>{
     if(isLast) {
       this.setState(prevState => ({ index: (prevState.index === portfolioData.length - 1) ? 0 : prevState.index + 1,
-                                    modalItem: portfolioData[(prevState.index === portfolioData.length - 1) ? 0 : prevState.index + 1]
+                                    modalItem: portfolioData[(prevState.index === portfolioData.length - 1) ? 0 : prevState.index + 1],
+                                    toggleText: false
                                     }));
     }
 
@@ -109,6 +129,7 @@ export default class Portfolio extends Component{
     if(isFirst){
       this.setState(prevState => ({ index: ( prevState.index === 0) ? portfolioData.length -1 : prevState.index - 1,
                                     modalItem: portfolioData[( prevState.index === 0) ? portfolioData.length -1 : prevState.index - 1],
+                                    toggleText: false,
                                   }), ()=>{
                                     this.setState({subIndex:  this.state.modalItem.imgGrp.length -1 })
                                   });
@@ -130,15 +151,23 @@ export default class Portfolio extends Component{
 
     return(
 
-
+        <div>
+        <Row><h1 className="port-section-header">WebApps</h1></Row>
         <Row className="portfolio">
         {
-        portfolioData.map((item, index) => <Col key = {index} md="4" sm="6" ><Card item = {item} i = {index} toggleModal = { this.toggleOn } /> </Col>)
+        webAppData.map((item, index) => <Col key = {index} md="4" sm="6" ><Card item = {item} i = {index} toggleModal = { this.toggleOn } /> </Col>)
          }
 
-           <ModalProject index = { this.state.index } subIndex = { this.state.subIndex } next = { this.next } previous = { this.previous } updateIndex = {this.updateIndex} mod = { this.state.modal } toggle = { this.toggle } data = {this.state.modalItem} />
+           <ModalProject index = { this.state.index } subIndex = { this.state.subIndex } next = { this.next } previous = { this.previous } updateIndex = {this.updateIndex} mod = { this.state.modal } toggle = { this.toggle } toggleText= { this.state.toggleText } data = {this.state.modalItem} toggleShow = {this.toggleShow}/>
         </Row>
+        <Row><h1 className="port-section-header">Websites</h1></Row>
+        <Row className="portfolio">
+        {
+        websiteData.map((item, index) => <Col key = {webAppData.length + index} md="4" sm="6" ><Card item = {item} i = {webAppData.length + index} toggleModal = { this.toggleOn } /> </Col>)
+         }
 
+        </Row>
+   </div>
 
     )
     }

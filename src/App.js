@@ -120,7 +120,7 @@ class App extends Component{
           </section>
           </Row>
           </ Container>
-         <Container>
+         <Container fluid={ true }>
          <Plx
          className='plx-title'
          parallaxData={ plxTitle }

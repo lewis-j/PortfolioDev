@@ -25,6 +25,13 @@ formSubmit(e){
     message: this.state.message
    };
 
+     emailjs.send(
+      'gmail2',
+      'portfolio_email',
+       data,
+       'user_zgh74bhkxxkf3OgVgUq9q'
+    );
+
    this.setState(prevState=>({
      displayForm: !prevState.displayForm
    }));

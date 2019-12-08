@@ -1,7 +1,7 @@
 //resours imports
    import gmaps_imgs from './img/leaves.jpg';
     import cyborg_ninja from './img/moreleaves.jpg';
-    import portrait from './img/uk_portrait.jpg';
+    import portrait from './img/fall_leaves.jpg';
     import bma_front from './img/BMA/BMA_front.png';
     import bma_collection from './img/BMA/BMA_collection.jpg';
     import bma_art from './img/BMA/BMA_art.png';
@@ -29,6 +29,13 @@
     import fallM4 from './img/moons/falling_moons (4).png';
     import about_img from './img/blackWhite.png';
     import srjc_logo from './img/SRJC_LOGO.png';
+    import gg1 from './img/gardenGrill/gg_front.png';
+    import gg2 from './img/gardenGrill/gg_menu.png';
+    import gg3 from './img/gardenGrill/gg_catering.png';
+    import gg4 from './img/gardenGrill/gg_reserve.png';
+    import gg5 from './img/gardenGrill/gg_contact.png';
+    import gg6 from './img/gardenGrill/gg_footer.png';
+
 
 
 //Global resource object
@@ -41,7 +48,8 @@ const resources = {
      googleMaps : [gmap_s,gmap1,gmap2,gmap3],
      quizPlugin: [quiz_app1,quiz_app2,quiz_app3,quiz_app4,quiz_app5],
      cyborgNinja :[cyborg1,cyborg2,cyborg3,cyborg4],
-     fallingMoons : [fallM1, fallM2, fallM3, fallM4]
+     fallingMoons : [fallM1, fallM2, fallM3, fallM4],
+     gardenGrill:[gg1,gg2,gg3,gg4,gg5,gg6]
      }
 
 export default resources;
