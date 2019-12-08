@@ -41,6 +41,7 @@ const plxTitle = [
   },
 ];
 
+
 const plxNav = [
   {
     start:50,
@@ -55,6 +56,11 @@ const plxNav = [
         startValue: 'rgba(230, 233, 233,0)',
         endValue: 'rgba(230, 233, 233,1)',
         property: 'borderBottomColor'
+      },
+      {
+        startValue: 'rgba(255,255,255,1)',
+        endValue: 'rgba(255,0,0,1)',
+        property: 'color'
       }
     ],
   },
@@ -107,7 +113,7 @@ class App extends Component{
             >
             <h3 className="myName-title">Lindsey Jackson's</h3>
             <h5 className="myName-subtitle">UI/UX Designer</h5>
-            <Button className="about-btn" outline color="primary" onClick={ this.aboutSection } >About</Button>
+            <div className="about-btn"  onClick={ this.aboutSection } >About</div>
             </Plx>
           <Plx
           className='MyAwesomeParallax'
@@ -141,7 +147,7 @@ class App extends Component{
         <Row className="header">
 
         <h3 className="about-title">About Me</h3>
-         <Button className="about-btn" outline color="primary" onClick={ this.aboutSection } >My Portfolio</Button>
+         <div className="about-btn" outline color="primary" onClick={ this.aboutSection } >My Portfolio</div>
          <div className="about-content">
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam
 </div>
