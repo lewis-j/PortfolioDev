@@ -91,6 +91,7 @@ class App extends Component{
 
   aboutSection(){
     this.setState(prevState => ({ isAbout: !prevState.isAbout }));
+    window.open('#','_self');
   }
 
   render(){

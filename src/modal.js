@@ -14,11 +14,11 @@ class ModalProject extends React.Component {
           <ModalBody>
           <Carousel index = { this.props.index } subIndex = { this.props.subIndex } next = {this.props.next } previous = { this.props.previous } updateIndex = { this.props.updateIndex } items = { this.props.data }/>
             <div style= {(this.props.toggleText)? {overflow: 'auto', height: 'auto'  }:{ overflow: 'hidden' , height: '100px'}}>{this.props.data.discription }</div>
-            <div style={ {textAlign: 'center'}}><div className="show-more" onClick={ this.props.toggleShow}>{(this.props.toggleText)? "show less": "show more"  }</div></div>
+            <div style={ {textAlign: 'center'}}><div className="show-more" onClick={ this.props.toggleShow}>{(this.props.toggleText)? "": "show more"  }</div></div>
           </ModalBody>
           <ModalFooter>
             <Button color="primary" onClick={()=>{  window.open( this.props.data.siteUrl ,'_blank');   }}> Visit {this.props.data.title} </Button>{' '}
-            <Button color="secondary" onClick={this.props.toggle}>Cancel</Button>
+            <Button color="secondary" onClick={this.props.toggle}>Close</Button>
           </ModalFooter>
         </Modal>
       </div>
