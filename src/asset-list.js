@@ -35,6 +35,7 @@
     import gg4 from './img/gardenGrill/gg_reserve.png';
     import gg5 from './img/gardenGrill/gg_contact.png';
     import gg6 from './img/gardenGrill/gg_footer.png';
+    import atom_Scn from './img/atom_scrnsht.png';
 
 
 
@@ -43,6 +44,7 @@ const resources = {
      myPortrait : portrait,
      srjcLogo : srjc_logo,
      aboutImg: about_img,
+     atomScn: atom_Scn,
      pitchApp:[pa_main,pa_menu,pa_stat1,pa_stat2,pa_stat3],
      brooklynMuseum:[bma_front, bma_collection, bma_art],
      googleMaps : [gmap_s,gmap1,gmap2,gmap3],

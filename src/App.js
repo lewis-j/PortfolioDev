@@ -65,7 +65,7 @@ const plxNav = [
     ],
   },
 ];
-const plxAbout = [
+const plxSlideLeft = [
   {
     start: 0,
     duration: 400,
@@ -78,6 +78,24 @@ const plxAbout = [
       {
       startValue: 0,
       endValue:  150,
+      property: "translateX"
+    }
+  ]
+}
+];
+const plxSlideRight = [
+  {
+    start: '.dev-container',
+    duration: 500,
+    properties: [
+      {
+        startValue: 0,
+        endValue: 1,
+        property: 'opacity',
+      },
+      {
+      startValue: 600,
+      endValue:  0,
       property: "translateX"
     }
   ]
@@ -149,16 +167,17 @@ class App extends Component{
         <h3 className="about-title">About Me</h3>
          <div className="about-btn" onClick={ this.aboutSection } >My Portfolio</div>
          <div className="about-content">
-My name is Lindsey Jackson and I'm a web developer.  I've had experience creating small business word press websites and  have created and managed a web application requested by the SRJC baseball department. I've find that developing websites and web applications fulfills my creative drive and is great means of artistic expression. Whether its the structure of the data models being used or the front end look and feel, design oriented thinking , let alone user centered design thinking is at the crux of my approach. 
+         My name is Lindsey Jackson and I'm a full stack web developer.  I've had experience creating small business word press websites and  have created and managed a web application requested by the SRJC baseball department. I find developing websites and web applications fulfills my creative drive and is a great means of artistic expression.  Whether it's the structure of the data models, or the front end look and feel, clean elegant design is somethings I'm always striving for.
+          <br/>  <br/>The rapidly evolving nature of web technologies is exciting and has kept me in constant pursuit of more knowledge. The beauty of coding to me is that it feels infectious. When presented with a challenging coding problem I find that will pursue it to the fullest extent and will not rest until I've found a suitable solution.
 </div>
 <figure className = "about-img" >
 <img src={ resources.aboutImg }/>
 </figure>
         </Row>
-        <Row className = "about-footer">
+        <Row className = "about-experience">
         <Plx
         className='slide-in-plx'
-        parallaxData={ plxAbout }
+        parallaxData={ plxSlideLeft }
         animateWhenNotInViewport = {true}
       >
       <h2>Web Technologies</h2>
@@ -172,13 +191,13 @@ My name is Lindsey Jackson and I'm a web developer.  I've had experience creatin
 
       <Plx
       className='slide-in-plx'
-      parallaxData={ plxAbout }
+      parallaxData={ plxSlideRight }
       animateWhenNotInViewport = {true}
     >
-        <Container>
+        <Container className="dev-container" fluid={true}>
     <Row>
 <Col md="6"><h2>Development Process</h2></Col>
-<Col md="6"><img  src={ resources.myPortrait }/></Col>
+<Col md="6"><img className="atom-screenshot" src={ resources.atomScn }/></Col>
 </Row>
 </Container>
 </Plx>

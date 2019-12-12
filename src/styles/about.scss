@@ -1,6 +1,12 @@
 .about-container{
   background-color: black;
 }
+.atom-screenshot{
+  width: 100%;
+}
+.dev-container{
+  color: $textDark;
+}
 .header {
   height: 650px;
   clip-path: polygon(
@@ -11,6 +17,9 @@
   );
 
   background-color: white;
+}
+.slide-in-plx{
+  margin-top: 50px;
 }
 .about-content{
   animation-name: slide-in;
@@ -45,8 +54,8 @@ to {
     position: absolute;
     left: -85px;
   }
-  .about-footer{
-    height:900px;
+  .about-experience{
+    height:300px;
   }
 .about-title{
 position: relative;
@@ -119,8 +128,8 @@ width: 470px;
     width: 500px;
   }
 
-  .about-footer{
-    height:1100px;
+  .about-experience{
+    height:500px;
   }
   .about-title{
     font-size: 100px;
