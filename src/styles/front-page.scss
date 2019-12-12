@@ -80,6 +80,9 @@ img.banner-img {
     width: 100%;
 }
 
+.top-spacing{
+  margin-top: 150px;
+}
 .port-section-header{
   margin:15px  auto 5px;
   font-family: $srjc-font;
@@ -221,6 +224,11 @@ background-color: #3b3b3b;
 .card {
   margin-top: 25px;
 }
+.site-footer-info{
+  text-align: center;
+  background-color:#e6e6ff;
+  color: #737373;
+}
 
 /* Custom, iPhone Retina */
 @media only screen and (min-width : 320px) {
@@ -231,12 +239,27 @@ background-color: #3b3b3b;
       color:black;
     }
 
+    .about-btn{
+          padding: 5px 10px;
+    }
+
     .portfolio-title{
-      font-size: 30px;
+      font-size: 55px;
     }
 
   .banner-img{
     position: absolute;
+  }
+  .brand-name{
+    font-size: 18px;
+  }
+
+  .b-container{
+    height: 850px;
+  }
+
+  .top-spacing{
+    margin-top: 0px;
   }
 }
 
@@ -247,13 +270,19 @@ background-color: #3b3b3b;
   }
 
   .portfolio-title{
-    font-size: 50px;
+    font-size: 80px;
   }
 
   .splash-blerb {
       top:60px;
       color: $blerbColor;
   }
+  .about-btn {
+    padding: 5px 25px;
+}
+.top-spacing{
+  margin-top: 100px;
+}
 }
 
 /* Small Devices, Tablets */
@@ -275,7 +304,7 @@ background-color: #3b3b3b;
 
 /* Medium Devices, Desktops */
 @media only screen and (min-width : 992px) {
-    height: 500px;
+    
 }
 
 /* Large Devices, Wide Screens */

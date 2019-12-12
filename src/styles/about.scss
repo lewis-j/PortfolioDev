@@ -18,12 +18,15 @@
 
   background-color: white;
 }
-.slide-in-plx{
-  margin-top: 50px;
+
+
+.dark-background{
+  background-color: $darkbg;
 }
 .about-content{
   animation-name: slide-in;
   animation-duration: 1.5s;
+  width: 100%;
 }
 @keyframes slide-in {
   from{ transform: translateX(-200px); opacity: 0 ;}
@@ -54,9 +57,15 @@ to {
     position: absolute;
     left: -85px;
   }
-  .about-experience{
-    height:300px;
+
+  .slide-in-plx{
+    margin: 50px 5px;
   }
+
+  .header{
+    height:750px;
+  }
+
 .about-title{
 position: relative;
 margin: 75px auto 5px;
@@ -68,12 +77,12 @@ text-shadow: 1px 1px grey;
 font-size: 13px;
 }
 
-.about-img{
+.about-img-container{
   width: 100%;
   overflow:hidden;
 }
 
-.about-img img{
+.about-img-container img{
   width: 100%;
 }
 
@@ -86,7 +95,28 @@ font-size: 13px;
 
 /* Extra Small Devices, Phones */
 @media only screen and (min-width : 480px) {
+  .header{
+    height: 540px;
+  }
+.p-width{
+  width: 70%;
+}
 
+.about-img{
+  position: relative;
+  left:88px;
+}
+
+.about-img-container {
+    position: absolute;
+    width: 380px;
+    z-index: -1;
+    right: 0px;
+    bottom: 182px;
+}
+.about-content{
+  margin-top: -30px;
+}
 }
 
 /* Small Devices, Tablets */
@@ -99,20 +129,28 @@ font-size: 13px;
   font-size:70px;
 }
 .about-content{
-  width: 65%;
   font-size: 16px;
-  margin-top: -200px;
+  margin-top: -40px;
+}
+
+.p-width{
+  width: 70%;
+  margin: inherit;
 }
 
 .about-img{
+  left: 0px;
+}
+
+.about-img-container{
   position: absolute;
   width: 380px;
 z-index: -1;
 right: 31px;
-bottom: 120px;
+bottom: 84px;
 }
 
-.about-img img{
+.about-img-container img{
 display: block;
 width: 470px;
 
@@ -135,11 +173,10 @@ width: 470px;
     font-size: 100px;
   }
   .about-content {
-      width: 72%;
       font-size: 18px;
-      margin-top: -200px;
+      margin-top: -85px;
   }
-  .about-img{
+  .about-img-container{
     top: 82px;
    right: 30px;
 
@@ -149,24 +186,37 @@ width: 470px;
 /* Large Devices, Wide Screens */
 @media only screen and (min-width : 1200px) {
 .header{
-  height: 740px;
+  height: 1000px;
 }
 .about-title{
   font-size: 120px;
   }
   .about-content{
-    width: 80%;
     font-size: 30px;
+    margin-top: -105px;
   }
-.about-img img{
+.about-img-container img{
   width: 750px;
 }
 
-.about-img{
-  height: 650px;
+.about-img-container{
+  height: 735px;
   width: 580px;
+  top:265px;
 }
 .contact-title{
   font-size: 30px;
 }
+}
+
+@media only screen and (min-width : 1920px) {
+
+.about-content{
+  width: 90%;
+}
+
+.p-width{
+  margin: auto;
+}
+
 }

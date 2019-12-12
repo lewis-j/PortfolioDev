@@ -24,8 +24,8 @@ const parallaxData = [
 
 const plxTitle = [
   {
-    start: ".portfolio",
-    duration: 100,
+    start: ".portfolio-container",
+    duration: 300,
     properties: [
       {
         startValue: 0,
@@ -76,8 +76,8 @@ const plxSlideLeft = [
         property: 'opacity',
       },
       {
-      startValue: 0,
-      endValue:  150,
+      startValue: -150,
+      endValue:  0,
       property: "translateX"
     }
   ]
@@ -145,7 +145,7 @@ class App extends Component{
           </section>
           </Row>
           </ Container>
-         <Container fluid={ true }>
+         <Container className="portfolio-container" fluid={ true }>
          <Plx
          className='plx-title'
          parallaxData={ plxTitle }
@@ -166,41 +166,41 @@ class App extends Component{
 
         <h3 className="about-title">About Me</h3>
          <div className="about-btn" onClick={ this.aboutSection } >My Portfolio</div>
-         <div className="about-content">
+         <div className="about-content"><p className="p-width">
          My name is Lindsey Jackson and I'm a full stack web developer.  I've had experience creating small business word press websites and  have created and managed a web application requested by the SRJC baseball department. I find developing websites and web applications fulfills my creative drive and is a great means of artistic expression.  Whether it's the structure of the data models, or the front end look and feel, clean elegant design is somethings I'm always striving for.
-          <br/>  <br/>The rapidly evolving nature of web technologies is exciting and has kept me in constant pursuit of more knowledge. The beauty of coding to me is that it feels infectious. When presented with a challenging coding problem I find that will pursue it to the fullest extent and will not rest until I've found a suitable solution.
-</div>
-<figure className = "about-img" >
-<img src={ resources.aboutImg }/>
+          <br/>  <br/>The rapidly evolving nature of web technologies is exciting and has kept me in constant pursuit of more knowledge. The beauty of coding to me is that it feels infectious. When presented with a challenging coding problem I find that will pursue it to the fullest extent and will not rest until I've solved it.
+</p></div>
+<figure className = "about-img-container" >
+<img  className="about-img" src={ resources.aboutImg }/>
 </figure>
         </Row>
+        </Container>
+        <div className='dark-background'>
+        <Container>
         <Row className = "about-experience">
-        <Plx
+        <Col md='12'><Plx
         className='slide-in-plx'
         parallaxData={ plxSlideLeft }
         animateWhenNotInViewport = {true}
       >
       <h2>Web Technologies</h2>
-        <p>I'm constantly seeking information on front and back end web technologies, currently < br/>experimenting with react.js and ecmascript 6 syntax.<br /> The web technologies I'm experienced in are as follows:  </p>
+        <p>I'm constantly seeking information on front and back end web technologies, currently experimenting with react.js and ecmascript 6 syntax.<br /> The web technologies I'm experienced in are as follows:  </p>
         {['Bootstrap','JQuery','PHP','React','mySQLi','PouchDB','d3.js'].map((item,index)=>{ return <Badge key={index} color='light'>{item}</Badge>})}
 
 
       </Plx>
+      </Col>
       </Row>
       </Container>
-
-      <Plx
-      className='slide-in-plx'
-      parallaxData={ plxSlideRight }
-      animateWhenNotInViewport = {true}
-    >
-        <Container className="dev-container" fluid={true}>
-    <Row>
+      </div>
+      <div>
+<Container className="dev-container" >
+  <Row>
 <Col md="6"><h2>Development Process</h2></Col>
 <Col md="6"><img className="atom-screenshot" src={ resources.atomScn }/></Col>
 </Row>
 </Container>
-</Plx>
+</div>
   <Footer />
 </div>
 

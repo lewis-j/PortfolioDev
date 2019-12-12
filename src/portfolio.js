@@ -15,7 +15,7 @@ const webAppData = [
         logoSrc: resources.srjcLogo,
         logoName: "SRJCCUBS",
         lib:['Bootstrap', 'Jquery', 'PouchDB.js','D3.js','PHP','MySQLi', 'FontAwesome', 'GoogleFonts'],
-        siteUrl:"https://www.lindseyljackson.com/Sites/pitchApp/"
+        siteUrl:"https://www.lindseyljackson.com/Sites/PitchApp/"
     },
     {
         title: "Google Maps API",
@@ -174,7 +174,7 @@ export default class Portfolio extends Component{
 
     return(
 
-        <div>
+        <div className="top-spacing">
         <Row><h1 className="port-section-header">WebApps</h1></Row>
         <Row className="portfolio">
         {
