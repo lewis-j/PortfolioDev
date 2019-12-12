@@ -7,7 +7,9 @@ html{
 }
 
 
-
+.badge {
+  margin-right: 3px;
+}
 
 .show-more{
    background-color: white;
@@ -29,6 +31,16 @@ html{
   top:50px;
   left: 24px;
   // color: $imgTxtLight;
+}
+
+.brand{
+  position: absolute;
+  right: 45px;
+  display: inline-block;
+}
+
+.brand-name{
+  display: inline-block;
 }
 
 img.banner-img {
@@ -82,15 +94,13 @@ img.banner-img {
   opacity: 0;
 }
 
-.srjc-logo {
-  width: 225px;
-  @include inline-offset(20px);
-  transform: translateY(-40px);
+.logo {
+  width: 50px;
 }
 
 .portfolio-title {
   position: relative;
-  @include inline-offset(-65px);
+  display: inline-block;
   color: black;
   border-bottom: 1px solid black;
   width: fit-content;
@@ -147,6 +157,10 @@ color: $imgFont;
 .image-holder:hover:before {
   background: none;
   content: "";
+}
+
+.slide-in-plx{
+  color:white;
 }
 
 .icon-grp{

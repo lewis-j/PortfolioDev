@@ -5,7 +5,7 @@ import Portfolio from "./portfolio.js";
 import Footer from "./footer.js";
 import Plx from 'react-plx';
 import ContactForm from './contact.js';
-import { Button, Container, Row, Col } from "reactstrap";
+import { Button, Container, Row, Col, Badge } from "reactstrap";
 import resources from './asset-list.js';
 
 const parallaxData = [
@@ -112,7 +112,7 @@ class App extends Component{
             parallaxData={ plxNav }
             >
             <h3 className="myName-title">Lindsey Jackson's</h3>
-            <h5 className="myName-subtitle">UI/UX Designer</h5>
+            <h5 className="myName-subtitle">Full Stack Developer</h5>
             <div className="about-btn"  onClick={ this.aboutSection } >About</div>
             </Plx>
           <Plx
@@ -123,7 +123,7 @@ class App extends Component{
           <img className="banner-img" src={ resources.myPortrait }/>
         </Plx>
           <section className="b-container">
-          <h1 className="splash-blerb">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</h1>
+          <h1 className="splash-blerb">I am a full stack Web Developer and Programmer from Sonoma County. I like to create everything from interactive web applications, custom small business Wordpress websites, and even 2d games using javascript . </h1>
           </section>
           </Row>
           </ Container>
@@ -133,8 +133,7 @@ class App extends Component{
          parallaxData={ plxTitle }
          animateWhenNotInViewport = {true}
        >
-        <img className="srjc-logo" src = { resources.srjcLogo }/>
-         <h1 className="portfolio-title">Santa Rosa Jr College <br/> Projects</h1>
+         <h1 className="portfolio-title">Projects</h1>
        </Plx>
           <Portfolio  />
           </Container>
@@ -143,13 +142,14 @@ class App extends Component{
       );
     }else{
       return(
+        <div>
       <Container className="about-container" fluid = {true}>
         <Row className="header">
 
         <h3 className="about-title">About Me</h3>
-         <div className="about-btn" outline color="primary" onClick={ this.aboutSection } >My Portfolio</div>
+         <div className="about-btn" onClick={ this.aboutSection } >My Portfolio</div>
          <div className="about-content">
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam
+My name is Lindsey Jackson and I'm a web developer.  I've had experience creating small business word press websites and  have created and managed a web application requested by the SRJC baseball department. I've find that developing websites and web applications fulfills my creative drive and is great means of artistic expression. Whether its the structure of the data models being used or the front end look and feel, design oriented thinking , let alone user centered design thinking is at the crux of my approach. 
 </div>
 <figure className = "about-img" >
 <img src={ resources.aboutImg }/>
@@ -157,17 +157,36 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         </Row>
         <Row className = "about-footer">
         <Plx
-        className='form-plx'
+        className='slide-in-plx'
         parallaxData={ plxAbout }
         animateWhenNotInViewport = {true}
       >
-      <ContactForm/>
+      <h2>Web Technologies</h2>
+        <p>I'm constantly seeking information on front and back end web technologies, currently < br/>experimenting with react.js and ecmascript 6 syntax.<br /> The web technologies I'm experienced in are as follows:  </p>
+        {['Bootstrap','JQuery','PHP','React','mySQLi','PouchDB','d3.js'].map((item,index)=>{ return <Badge key={index} color='light'>{item}</Badge>})}
+
+
       </Plx>
-        </Row>
-        <Row>
-            <Footer />
-            </Row>
+      </Row>
       </Container>
+
+      <Plx
+      className='slide-in-plx'
+      parallaxData={ plxAbout }
+      animateWhenNotInViewport = {true}
+    >
+        <Container>
+    <Row>
+<Col md="6"><h2>Development Process</h2></Col>
+<Col md="6"><img  src={ resources.myPortrait }/></Col>
+</Row>
+</Container>
+</Plx>
+  <Footer />
+</div>
+
+
+
     );
     }
 

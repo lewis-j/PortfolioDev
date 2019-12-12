@@ -22,7 +22,7 @@ render(){
     <FontAwesomeIcon className="social-icon" onClick={ ()=> {this.goToLink('https://www.instagram.com/lindseyjackson88/?hl=en') }} icon={['fab', 'instagram']} size="4x" />
       <FontAwesomeIcon className="social-icon" onClick={ ()=> {this.goToLink('https://github.com/lewis-j/') }} icon={['fab', 'github']} size="4x" />
     </section>
-
+<div className="site-footer-info"> © Copywrite lindseyljackson.com 2019</div>
 
   </div>
 

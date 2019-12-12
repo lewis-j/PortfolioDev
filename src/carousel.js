@@ -50,7 +50,7 @@ this.props.previous();
           key={"carousel"+index}
         >
           <img src={item} alt={this.props.items.title} className = "carousel-img"/>
-          
+
         </CarouselItem>
       );
     });
@@ -61,7 +61,7 @@ this.props.previous();
         next={this.next}
         previous={this.previous}
       >
-      {console.log("ITEMS:",this.props.items.imgGrp )}
+    
         <CarouselIndicators items={this.props.items.imgGrp} activeIndex={activeIndex} onClickHandler={this.goToIndex} />
         {slides}
         <CarouselControl direction="prev" directionText="Previous" onClickHandler={this.previous} />
