@@ -32,7 +32,6 @@ html{
   left: 24px;
   // color: $imgTxtLight;
 }
-
 .brand{
   position: absolute;
   right: 45px;
@@ -54,6 +53,7 @@ img.banner-img {
 
 
 .splash-blerb{
+
     width: 750px;
   position: absolute;
   padding:40px;
@@ -179,7 +179,6 @@ color: $imgFont;
 
 .footer {
   background-color: ghostwhite;
-  margin-top: 68px;
   width:100%;
 }
 
@@ -261,6 +260,13 @@ background-color: #3b3b3b;
   .top-spacing{
     margin-top: 0px;
   }
+   div.modal-body p{
+     padding:10px 0px;
+       text-indent: 50px
+   }
+   .dev-content p{
+     text-indent: 20px;
+   }
 }
 
 /* Extra Small Devices, Phones */
@@ -283,13 +289,19 @@ background-color: #3b3b3b;
 .top-spacing{
   margin-top: 100px;
 }
+div.modal-body p{
+  padding:20px 5px;
+}
+.dev-content p{
+  text-indent: 30px;
+}
 }
 
 /* Small Devices, Tablets */
 @media only screen and (min-width : 768px) {
   .splash-blerb{
     width: 750px;
-    font-size: 35px;
+    font-size: 30px;
     top:150px;
 
   }
@@ -298,16 +310,43 @@ background-color: #3b3b3b;
 
     height: 120vh;
   }
+  .modal-dialog{
+    max-width: 800px;
+  }
+  div.modal-body p{
+    padding:10px 20px;
+    font-size: 20px;
+  }
 
 
 }
 
 /* Medium Devices, Desktops */
 @media only screen and (min-width : 992px) {
-    
+  .modal-dialog{
+    max-width: 900px;
+  }
+  .dev-content p{
+    text-indent: 40px;
+  }
 }
 
 /* Large Devices, Wide Screens */
 @media only screen and (min-width : 1200px) {
-
+.about-btn{
+  font-size: 25px;
+}
+.myName-title{
+  font-size: 40px;
+}
+.myName-subtitle{
+  font-size: 27px;
+  top:57px;
+}
+.splash-blerb{
+  font-size: 37px;
+}
+.port-section-header{
+  font-size: 60px;
+}
 }

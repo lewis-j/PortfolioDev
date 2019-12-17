@@ -4,6 +4,18 @@
 .atom-screenshot{
   width: 100%;
 }
+.mamp-logo{
+    @include img-overlap(25%,7%);
+  }
+.atom-logo{
+  @include img-overlap(23%,42%);
+}
+.git-logo{
+  @include img-overlap(20%,74%);
+}
+.about-dev-img{
+  position: relative;
+}
 .dev-container{
   color: $textDark;
 }
@@ -22,11 +34,18 @@
 
 .dark-background{
   background-color: $darkbg;
+  box-shadow: 0px 10px 8px 3px #bfbfbf;
 }
 .about-content{
   animation-name: slide-in;
   animation-duration: 1.5s;
   width: 100%;
+}
+.contact-header a{
+  color: $autumText;
+}
+.contact-header a:hover{
+  color: #e1c5ad;
 }
 @keyframes slide-in {
   from{ transform: translateX(-200px); opacity: 0 ;}
@@ -49,10 +68,18 @@ to {
     transform: rotate(200deg) scale(0);}
 
 }
-
+.contact-area{
+  background-color: $darkbg;
+  color:$lightTxt;
+  box-shadow: 0px 0px 8px 3px #bfbfbf;
+}
 
 /* Custom, iPhone Retina */
 @media only screen and (min-width : 320px) {
+  .contact-area{
+    padding:18px;
+  }
+
   .form-plx{
     position: absolute;
     left: -85px;
@@ -63,7 +90,7 @@ to {
   }
 
   .header{
-    height:750px;
+    height:940px;
   }
 
 .about-title{
@@ -71,10 +98,12 @@ position: relative;
 margin: 75px auto 5px;
 font-size: 50px;
 text-shadow: 1px 1px grey;
+width: 100%;
+text-align: center;
 }
 .about-content{
   padding: 30px;
-font-size: 13px;
+font-size: 16px;
 }
 
 .about-img-container{
@@ -86,20 +115,36 @@ font-size: 13px;
   width: 100%;
 }
 
-.contact-title{
-  margin-top: 70px;
-  color:white;
+.contact-header{
+
   font-size: 25px;
+}
+.dev-content{
+  margin-top: 30px;
+}
+.dev-content p{
+  margin: 30px 0px;
+  padding: 0px 5px;
+}
+.about-dev-img{
+  margin-top: 20px;
+}
+.about-content p{
+  text-indent: 20px;
 }
 }
 
 /* Extra Small Devices, Phones */
 @media only screen and (min-width : 480px) {
   .header{
-    height: 540px;
+    height: 660px;
   }
 .p-width{
-  width: 70%;
+  width: 75%;
+}
+.about-title{
+  text-align: left;
+  margin-left: 10%;
 }
 
 .about-img{
@@ -112,10 +157,13 @@ font-size: 13px;
     width: 380px;
     z-index: -1;
     right: 0px;
-    bottom: 182px;
+    bottom: 80px;
 }
 .about-content{
-  margin-top: -30px;
+  margin-top: -35px;
+}
+.about-content p{
+  text-indent: 30px;
 }
 }
 
@@ -124,6 +172,7 @@ font-size: 13px;
   .header{
     height: 560px;
   }
+
 .about-title{
   margin-left: 75px;
   font-size:70px;
@@ -135,7 +184,7 @@ font-size: 13px;
 
 .p-width{
   width: 70%;
-  margin: inherit;
+
 }
 
 .about-img{
@@ -155,6 +204,17 @@ display: block;
 width: 470px;
 
 }
+.about-dev-img{
+  margin-top: 75px;
+}
+.contact-area form{
+  max-width: 500px;
+  margin: auto;
+}
+
+.contact-header{
+  text-align: center;
+}
 
 }
 
@@ -171,15 +231,19 @@ width: 470px;
   }
   .about-title{
     font-size: 100px;
+    margin-top: 20px;
   }
   .about-content {
       font-size: 18px;
-      margin-top: -85px;
+      margin-top: -50px;
   }
   .about-img-container{
     top: 82px;
    right: 30px;
 
+  }
+  .web-tech-content{
+    font-size: 20px;
   }
 }
 
@@ -190,6 +254,10 @@ width: 470px;
 }
 .about-title{
   font-size: 120px;
+
+  }
+  .web-tech-content{
+    font-size: 30px;
   }
   .about-content{
     font-size: 30px;
@@ -204,7 +272,7 @@ width: 470px;
   width: 580px;
   top:265px;
 }
-.contact-title{
+.contact-header{
   font-size: 30px;
 }
 }
@@ -212,11 +280,17 @@ width: 470px;
 @media only screen and (min-width : 1920px) {
 
 .about-content{
-  width: 90%;
+  margin:0px auto;
+  padding: 0px;
 }
-
 .p-width{
-  margin: auto;
+  width: 50%;
 }
+.about-title{
+  margin-left:25%;
+
+  }
+
+
 
 }

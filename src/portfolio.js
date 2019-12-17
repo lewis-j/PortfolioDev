@@ -9,7 +9,9 @@ const libArray = ['bootstrap', 'jquery', 'pouchDB.js','PHP','mySQLi'];
 const webAppData = [
     {
         title: "SRJC Pitch Tracker",
-        discription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
+        discription: `I took on a request by the Santa Rosa Junior College to create an interactive web application to collect pitch app data. This app was a means to replace the baseball department old way of collecting data using pen and paper, and then transferring that data by hand to an excel sheet . There were three main deliverable that I was focused on when developing this web app. The first was to create the main UI for the data collection page. The second was to have this data represented in some meaningful way, which can be seen on the cubs pitch data page. The third was to create a mini CMS that could handle pitcher roster changes.
+        Although each of these deliverables presented unique challenges, there was one complication that was necessary to solve yet not explicitly requested. That complication was that we could not rely on networked connectivity during the data collection portion of the app due to the nature of the locations of the baseball games.
+ The only viable solution was an offline first approach. I chose pouchdb.js to handle offline local storage because it leverages the power of IndexDB but with a promised based syntax. For remote storage I chose mySql because of it's strong querying capabilities. With this stack I was able to create temporary local storage solution. This was preferable because it meant that data would only persist locally until transferred.  This helped alleviate the security vulnerability of storing local data in the browser.`,
         imgSrc: resources.pitchApp[0],
         imgGrp: resources.pitchApp,
         logoSrc: resources.srjcLogo,
@@ -67,7 +69,7 @@ const webAppData = [
 const websiteData = [
   {
       title: "Brooklyn Arts Museum",
-      discription: "This is a fully responsive website I built using the bootstrap library. The focus for this website was the frontend design. The goal was to create a website that has a layout, and color pallete that would really showcase the stunning images from the Brooklyn Museum of Art.  I was hoping to achieve this by using neutral/toned down colors in order to allow the colors of the images to pop. I separated text content into bootstrap panels, and places images into the bootstrap thumbnail css class to give a cleaner and more organized aesthetic .  All content is sourced from the open source non-profit Internet archive https://archive.org/",
+      discription: "This is a fully responsive website I built using the bootstrap library. The focus for this website was the frontend design. The goal was to create a website that had a layout and color pallete that would really showcase the stunning images from the Brooklyn Museum of Art.  I achieved this by using neutral/toned down colors in order to allow the images to pop. \n I separated text content into bootstrap panels, and places images into the bootstrap thumbnail css class to give a cleaner and more organized aesthetic .  All content is sourced from the open source non-profit Internet archive https://archive.org/",
       imgSrc: resources.brooklynMuseum[0],
       imgGrp: resources.brooklynMuseum,
       logoSrc: resources.srjcLogo,

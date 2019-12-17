@@ -18,23 +18,25 @@ this.state = {
 }
 formSubmit(e){
   e.preventDefault();
-  console.log(this.state);
   const data = {
     email: this.state.email,
     from_name: this.state.from_name,
     message: this.state.message
    };
+if(data.email!=''&& data.from_nam!='' &&data.message!='' ){
+  emailjs.send(
+   'gmailportfolio',
+   'portfolio_email',
+    data,
+    'user_zgh74bhkxxkf3OgVgUq9q'
+ );
+ this.setState(prevState=>({
+   displayForm: !prevState.displayForm
+ }));
+}
 
-     emailjs.send(
-      'gmail2',
-      'portfolio_email',
-       data,
-       'user_zgh74bhkxxkf3OgVgUq9q'
-    );
 
-   this.setState(prevState=>({
-     displayForm: !prevState.displayForm
-   }));
+
 
 
 
@@ -51,11 +53,13 @@ var  message = '';
 
 
 return(
-  <div>
+  <div className="contact-area">
+  <div className = "contact-header">
+  <h3>Contact Me</h3>
+  <a href = "mailto: linlewjackson@gmail.com">linlewjackson@gmail.com</a>
+  </div>
+
 <Form className={(this.state.displayForm)?"visable":"form-completed"} onSubmit={ this.formSubmit }>
-<div className = "contact-title">
-Contact Me
-</div>
 <FormGroup>
   <Label for="visitorEmail">Email:</Label>
   <Input
@@ -87,7 +91,7 @@ Contact Me
 </FormGroup>
 <Button >Submit</Button>
 </Form>
-{message}
+<div style={{textAlign: 'center'}}>{message}</div>
 </div>
 
 );

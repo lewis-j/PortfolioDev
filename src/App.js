@@ -59,7 +59,7 @@ const plxNav = [
       },
       {
         startValue: 'rgba(255,255,255,1)',
-        endValue: 'rgba(255,0,0,1)',
+        endValue: '#c69672',
         property: 'color'
       }
     ],
@@ -166,10 +166,10 @@ class App extends Component{
 
         <h3 className="about-title">About Me</h3>
          <div className="about-btn" onClick={ this.aboutSection } >My Portfolio</div>
-         <div className="about-content"><p className="p-width">
-         My name is Lindsey Jackson and I'm a full stack web developer.  I've had experience creating small business word press websites and  have created and managed a web application requested by the SRJC baseball department. I find developing websites and web applications fulfills my creative drive and is a great means of artistic expression.  Whether it's the structure of the data models, or the front end look and feel, clean elegant design is somethings I'm always striving for.
-          <br/>  <br/>The rapidly evolving nature of web technologies is exciting and has kept me in constant pursuit of more knowledge. The beauty of coding to me is that it feels infectious. When presented with a challenging coding problem I find that will pursue it to the fullest extent and will not rest until I've solved it.
-</p></div>
+         <div className="about-content p-width">
+         <p>My name is Lindsey Jackson and I'm a full stack web developer.  I've had experience creating small business word press websites and  have created and managed a web application requested by the SRJC baseball department. I find developing websites and web applications fulfills my creative drive and is a great means of artistic expression.  Whether it's the structure of the data models or the front end look and feel, clean elegant design is somethings I'm always striving for.</p>
+         <p>The rapidly evolving nature of web technologies is exciting and keeps me in constant pursuit of more knowledge.  I really enjoy  finding new and more effective ways to bring ideas to life. I'm truly passionate about coding and am looking forward to the future in this field.</p>
+</div>
 <figure className = "about-img-container" >
 <img  className="about-img" src={ resources.aboutImg }/>
 </figure>
@@ -184,7 +184,7 @@ class App extends Component{
         animateWhenNotInViewport = {true}
       >
       <h2>Web Technologies</h2>
-        <p>I'm constantly seeking information on front and back end web technologies, currently experimenting with react.js and ecmascript 6 syntax.<br /> The web technologies I'm experienced in are as follows:  </p>
+        <p className="web-tech-content">I'm constantly seeking information on front and back end web technologies, currently experimenting with react.js and ecmascript 6 syntax. The web technologies I'm experienced in are as follows:  </p>
         {['Bootstrap','JQuery','PHP','React','mySQLi','PouchDB','d3.js'].map((item,index)=>{ return <Badge key={index} color='light'>{item}</Badge>})}
 
 
@@ -196,11 +196,18 @@ class App extends Component{
       <div>
 <Container className="dev-container" >
   <Row>
-<Col md="6"><h2>Development Process</h2></Col>
-<Col md="6"><img className="atom-screenshot" src={ resources.atomScn }/></Col>
+<Col md="6" className='order-md-2'><div className='about-dev-img'><img className="atom-screenshot" src={ resources.aboutDev.atomScn }/><img className="mamp-logo" src={ resources.aboutDev.mamp }/><img className="atom-logo" src={ resources.aboutDev.atom }/><img className="git-logo" src={ resources.aboutDev.git }/></div></Col>
+<Col md="6" className='order-md-1'><div className="dev-content"><h2>Development Process</h2>
+<p>The majority of my  development experience I've used Bootstrap, jQuery,  and  JavaScript, although I'm starting to favor development in React.js.  For development tools I use Atom as my text editor, and MAMP for windows to set up a local environment. For any command line operations I'm using Git bash shell.</p>
+<p>For the start of most projects the first thing I do is try to visualize a data model.  Then I map out how that data should be represented on the page and how the user needs to interact with that data in the UI.
+This process often means also breaking data down into UI components on the page. After my UI is build  I will continually refine it until I have the intended look and feel.</p>
+<p>Testing and feedback have always benefited the direction and results of my projects.  My UI design decisions are informed by user centered design thinking, which incorporates  methods of user centered design found at DesignKit.org</p>
+</div>
+  </Col>
 </Row>
 </Container>
 </div>
+<ContactForm/>
   <Footer />
 </div>
 

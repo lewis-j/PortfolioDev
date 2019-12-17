@@ -3,3 +3,9 @@
   display: inline-block;
   transform: translateX($px);
 }
+@mixin img-overlap($width, $left){
+  position: absolute;
+  top:35%;
+  width: $width;
+  left: $left;
+}

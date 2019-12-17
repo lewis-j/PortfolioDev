@@ -58,10 +58,11 @@ this.props.previous();
     return (
       <Carousel
         activeIndex={activeIndex}
+        interval={(this.props.pause)?false:3000}
         next={this.next}
         previous={this.previous}
       >
-    
+
         <CarouselIndicators items={this.props.items.imgGrp} activeIndex={activeIndex} onClickHandler={this.goToIndex} />
         {slides}
         <CarouselControl direction="prev" directionText="Previous" onClickHandler={this.previous} />

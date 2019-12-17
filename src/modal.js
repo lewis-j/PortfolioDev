@@ -24,7 +24,7 @@ class ModalProject extends React.Component {
           <ModalHeader toggle={this.props.toggle}><div style={{display: 'inline-block'}}>{ this.props.data.title }</div><div className='brand'><img className="logo" src = { this.props.data.logoSrc }/>
           <div className="brand-name">{this.props.data.logoName}</div></div></ModalHeader>
           <ModalBody>
-          <Carousel index = { this.props.index } subIndex = { this.props.subIndex } next = {this.props.next } previous = { this.props.previous } updateIndex = { this.props.updateIndex } items = { this.props.data }/>
+          <Carousel index = { this.props.index } subIndex = { this.props.subIndex } next = {this.props.next } previous = { this.props.previous } updateIndex = { this.props.updateIndex } items = { this.props.data } pause={ this.props.toggleText }/>
             <div>{this.listItems}</div>
             <div style= {(this.props.toggleText)? {overflow: 'auto', height: 'auto'  }:{ overflow: 'hidden' , height: '100px'}}>{this.formattedText}</div>
             <div style={ {textAlign: 'center'}}><div className="show-more" onClick={ this.props.toggleShow}>{(this.props.toggleText)? "": "show more"  }</div></div>
