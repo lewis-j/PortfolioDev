@@ -65,6 +65,19 @@ const plxNav = [
     ],
   },
 ];
+const plxNav2 = [
+  {
+    start:50,
+    duration: 100,
+    properties: [
+      {
+        startValue: 'rgba(255,255,255,1)',
+        endValue: '#000000',
+        property: 'color'
+      }
+    ],
+  },
+];
 const plxSlideLeft = [
   {
     start: 0,
@@ -129,7 +142,11 @@ class App extends Component{
             className="navBar"
             parallaxData={ plxNav }
             >
-            <h3 className="myName-title">Lindsey Jackson's</h3>
+            <Plx
+              parallaxData={ plxNav2 }
+              >
+            <h3 className="myName-title">Lindsey Jackson</h3>
+            </Plx>
             <h5 className="myName-subtitle">Full Stack Developer</h5>
             <div className="about-btn"  onClick={ this.aboutSection } >About</div>
             </Plx>
@@ -163,9 +180,8 @@ class App extends Component{
         <div>
       <Container className="about-container" fluid = {true}>
         <Row className="header">
-
-        <h3 className="about-title">About Me</h3>
-         <div className="about-btn" onClick={ this.aboutSection } >My Portfolio</div>
+<div className="about-btn" onClick={ this.aboutSection } >My Portfolio</div>
+         <div className="about-header"><div className="about-title">About Me</div></div>
          <div className="about-content p-width">
          <p>My name is Lindsey Jackson and I'm a full stack web developer.  I've had experience creating small business word press websites and  have created and managed a web application requested by the SRJC baseball department. I find developing websites and web applications fulfills my creative drive and is a great means of artistic expression.  Whether it's the structure of the data models or the front end look and feel, clean elegant design is somethings I'm always striving for.</p>
          <p>The rapidly evolving nature of web technologies is exciting and keeps me in constant pursuit of more knowledge.  I really enjoy  finding new and more effective ways to bring ideas to life. I'm truly passionate about coding and am looking forward to the future in this field.</p>

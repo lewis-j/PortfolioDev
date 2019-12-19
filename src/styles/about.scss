@@ -27,6 +27,12 @@
     100% 100%,
     0 calc(100% - 6vw)
   );
+  -webkit-clip-path: polygon(
+    0 0,
+    100% 0,
+    100% 100%,
+    0 calc(100% - 6vw)
+  );
 
   background-color: white;
 }
@@ -34,7 +40,7 @@
 
 .dark-background{
   background-color: $darkbg;
-  box-shadow: 0px 10px 8px 3px #bfbfbf;
+  box-shadow: 0px 10px 8px -4px #bfbfbf;
 }
 .about-content{
   animation-name: slide-in;
@@ -145,6 +151,7 @@ font-size: 16px;
 .about-title{
   text-align: left;
   margin-left: 10%;
+  margin-top: 6px;
 }
 
 .about-img{

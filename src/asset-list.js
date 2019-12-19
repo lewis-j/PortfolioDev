@@ -6,6 +6,8 @@
     import bma_collection from './img/BMA/BMA_collection.jpg';
     import bma_art from './img/BMA/BMA_art.png';
     import pa_main from './img/pitchApp/main.png';
+    import pa_transfer from './img/pitchApp/transfer.png';
+    import pa_roster from './img/pitchApp/roster_cms.png';
     import pa_menu from './img/pitchApp/menu.png';
     import pa_stat1 from './img/pitchApp/stats_1.png';
     import pa_stat2 from './img/pitchApp/stats_2.png';
@@ -48,7 +50,7 @@ const resources = {
      srjcLogo : srjc_logo,
      aboutImg: about_img,
      aboutDev: {atomScn: atom_Scn, mamp: mamp, atom: atom, git: git},
-     pitchApp:[pa_main,pa_menu,pa_stat1,pa_stat2,pa_stat3],
+     pitchApp:[pa_main,pa_menu,pa_transfer,pa_roster,pa_stat1,pa_stat2,pa_stat3],
      brooklynMuseum:[bma_front, bma_collection, bma_art],
      googleMaps : [gmap_s,gmap1,gmap2,gmap3],
      quizPlugin: [quiz_app1,quiz_app2,quiz_app3,quiz_app4,quiz_app5],

@@ -58,7 +58,7 @@ this.props.previous();
     return (
       <Carousel
         activeIndex={activeIndex}
-        interval={(this.props.pause)?false:3000}
+        interval={(this.props.pause)?false:5000}
         next={this.next}
         previous={this.previous}
       >
