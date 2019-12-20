@@ -1,9 +1,7 @@
 //resours imports
-   import gmaps_imgs from './img/leaves.jpg';
-    import cyborg_ninja from './img/moreleaves.jpg';
     import portrait from './img/fall_leaves.jpg';
     import bma_front from './img/BMA/BMA_front.png';
-    import bma_collection from './img/BMA/BMA_collection.jpg';
+    import bma_collection from './img/BMA/BMA_collection.png';
     import bma_art from './img/BMA/BMA_art.png';
     import pa_main from './img/pitchApp/main.png';
     import pa_transfer from './img/pitchApp/transfer.png';

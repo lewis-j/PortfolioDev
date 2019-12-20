@@ -5,7 +5,6 @@
 }
 @mixin img-overlap($width, $left){
   position: absolute;
-  top:35%;
   width: $width;
   left: $left;
 }

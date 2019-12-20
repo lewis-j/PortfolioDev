@@ -22,14 +22,13 @@ html{
 
 .myName-title{
   position: absolute;
-  top:20px;
+  top:10px;
   left: 20px;
 }
 .myName-subtitle{
   position: absolute;
-  top:50px;
+  top:42px;
   left: 24px;
-  // color: $imgTxtLight;
 }
 .brand{
   position: absolute;
@@ -87,9 +86,9 @@ img.banner-img {
   font-family: $srjc-font;
 }
 .portfolio{
-  background-color: black;
+  background-color: $darkbg;
   border-radius: 15px;
-  padding: 20px;
+  padding: 5px 20px 29px;
 }
 .plx-title{
   text-align: center;
@@ -103,7 +102,7 @@ img.banner-img {
 .portfolio-title {
   position: relative;
   display: inline-block;
-  color: $textDark;
+  color: $darkTxt;
   border-bottom: 1px solid black;
   width: fit-content;
   width: -moz-fit-content;
@@ -124,10 +123,12 @@ position: absolute;
 width: 200px;
 font-size: 30px;
 margin: auto;
+font-family: $srjc-font;
+font-weight: bold;
 text-align: center;
 left: 0;
 right: 0;
-color: $imgFont;
+color: $imgTxtLight;
 
 }
 
@@ -161,12 +162,10 @@ color: $imgFont;
   content: "";
 }
 
-.slide-in-plx{
-  color:white;
-}
+
 
 .icon-grp{
-  width: 200px;
+  width: 217px;
       margin: 0px auto;
       padding: 30px 0px;
 }
@@ -186,6 +185,7 @@ color: $imgFont;
   position: relative;
   color: $iconColor;
   margin:4px;
+  display: inline-block;
 
 }
 
@@ -211,7 +211,7 @@ color: $imgFont;
 .about-btn:hover{
   background-color: $imgTxtLight;
   color: black;
-  border-color: black;
+  border:none;
 }
 /*BOOTSTRAP CLASS ALTERATIONS*/
 
@@ -225,8 +225,8 @@ background-color: #3b3b3b;
 }
 .site-footer-info{
   text-align: center;
-  background-color:#e6e6ff;
-  color: #737373;
+  background-color:$darkbg;
+  color: $lightTxt;
 }
 
 /* Custom, iPhone Retina */
@@ -254,7 +254,7 @@ background-color: #3b3b3b;
   }
 
   .b-container{
-    height: 850px;
+    height: 800px;
   }
 
   .top-spacing{
@@ -280,8 +280,9 @@ background-color: #3b3b3b;
   }
 
   .splash-blerb {
-      top:60px;
-      color: $blerbColor;
+      top: 30vw;
+      max-width: 605px;
+      color: $imgTxtLight;
   }
   .about-btn {
     padding: 5px 25px;
@@ -300,16 +301,12 @@ div.modal-body p{
 /* Small Devices, Tablets */
 @media only screen and (min-width : 768px) {
   .splash-blerb{
-    width: 750px;
+    max-width: 735px;
     font-size: 30px;
-    top:150px;
 
   }
 
-  .b-container{
 
-    height: 120vh;
-  }
   .modal-dialog{
     max-width: 800px;
   }
@@ -345,12 +342,18 @@ div.modal-body p{
 }
 .myName-subtitle{
   font-size: 27px;
-  top:57px;
+  top:55px;
 }
 .splash-blerb{
   font-size: 37px;
+  max-width: 800px;
+  top:25%;
 }
 .port-section-header{
   font-size: 60px;
+}
+.img-title{
+  width:300px;
+  font-size: 40px;
 }
 }

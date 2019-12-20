@@ -158,7 +158,7 @@ class App extends Component{
           <img className="banner-img" src={ resources.myPortrait }/>
         </Plx>
           <section className="b-container">
-          <h1 className="splash-blerb">I am a full stack Web Developer and Programmer from Sonoma County. I like to create everything from interactive web applications, custom small business Wordpress websites, and even 2d games using javascript . </h1>
+          <h1 className="splash-blerb">I am a full stack Web Developer and Programmer from Sonoma County. I like to create everything from interactive web applications, custom small business Wordpress websites, and 2d games using javascript. </h1>
           </section>
           </Row>
           </ Container>
@@ -181,9 +181,9 @@ class App extends Component{
       <Container className="about-container" fluid = {true}>
         <Row className="header">
 <div className="about-btn" onClick={ this.aboutSection } >My Portfolio</div>
-         <div className="about-header"><div className="about-title">About Me</div></div>
          <div className="about-content p-width">
-         <p>My name is Lindsey Jackson and I'm a full stack web developer.  I've had experience creating small business word press websites and  have created and managed a web application requested by the SRJC baseball department. I find developing websites and web applications fulfills my creative drive and is a great means of artistic expression.  Whether it's the structure of the data models or the front end look and feel, clean elegant design is somethings I'm always striving for.</p>
+         <div className="about-title">About Me</div>
+         <p>My name is Lindsey Jackson and I'm a full stack web developer.  I've had experience creating small business websites and  have created and managed a web application requested by the SRJC baseball department. I find developing websites and web applications fulfills my creative drive and is a great means of artistic expression.  Whether it's the structure of the data models or the front end look and feel, clean elegant design is somethings I'm always striving for.</p>
          <p>The rapidly evolving nature of web technologies is exciting and keeps me in constant pursuit of more knowledge.  I really enjoy  finding new and more effective ways to bring ideas to life. I'm truly passionate about coding and am looking forward to the future in this field.</p>
 </div>
 <figure className = "about-img-container" >
@@ -214,10 +214,10 @@ class App extends Component{
   <Row>
 <Col md="6" className='order-md-2'><div className='about-dev-img'><img className="atom-screenshot" src={ resources.aboutDev.atomScn }/><img className="mamp-logo" src={ resources.aboutDev.mamp }/><img className="atom-logo" src={ resources.aboutDev.atom }/><img className="git-logo" src={ resources.aboutDev.git }/></div></Col>
 <Col md="6" className='order-md-1'><div className="dev-content"><h2>Development Process</h2>
-<p>The majority of my  development experience I've used Bootstrap, jQuery,  and  JavaScript, although I'm starting to favor development in React.js.  For development tools I use Atom as my text editor, and MAMP for windows to set up a local environment. For any command line operations I'm using Git bash shell.</p>
-<p>For the start of most projects the first thing I do is try to visualize a data model.  Then I map out how that data should be represented on the page and how the user needs to interact with that data in the UI.
-This process often means also breaking data down into UI components on the page. After my UI is build  I will continually refine it until I have the intended look and feel.</p>
-<p>Testing and feedback have always benefited the direction and results of my projects.  My UI design decisions are informed by user centered design thinking, which incorporates  methods of user centered design found at DesignKit.org</p>
+<p>The majority of my  development experience I've used Bootstrap, jQuery,  and  JavaScript, although I'm starting to favor development in React.js. For development tools I use Atom as my text editor, and MAMP for windows to set up a local environment. For any command line operations I'm using Git bash shell.</p>
+<p>I begin most projects by visualizing a data model.  Then I map out how that data should be represented on the page and how the user needs to interact with that data in the UI.
+With this process I also break the data down into UI components on the page. After my UI is build I will continually refine until I have the intended look and feel.</p>
+<p>Testing and feedback have always benefited the direction and results of my projects.  My UI design decisions are informed by user centered design thinking.</p>
 </div>
   </Col>
 </Row>

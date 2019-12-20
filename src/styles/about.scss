@@ -1,23 +1,27 @@
 .about-container{
-  background-color: black;
+  background-color: $darkbg;
 }
 .atom-screenshot{
   width: 100%;
 }
 .mamp-logo{
-    @include img-overlap(25%,7%);
+    @include img-overlap(35%,1%);
+      top:27%;
   }
 .atom-logo{
-  @include img-overlap(23%,42%);
+  @include img-overlap(33%,35%);
+  z-index: 20;
+    top:20%;
 }
 .git-logo{
-  @include img-overlap(20%,74%);
+  @include img-overlap(30%,68%);
+    top:20%;
 }
 .about-dev-img{
   position: relative;
 }
 .dev-container{
-  color: $textDark;
+  color: $darkTxt;
 }
 .header {
   height: 650px;
@@ -40,7 +44,7 @@
 
 .dark-background{
   background-color: $darkbg;
-  box-shadow: 0px 10px 8px -4px #bfbfbf;
+  box-shadow: 0px 7px 7px -7px #bfbfbf;
 }
 .about-content{
   animation-name: slide-in;
@@ -52,6 +56,15 @@
 }
 .contact-header a:hover{
   color: #e1c5ad;
+}
+.about-header{
+  width: 100%;
+}
+.about-btn{
+  z-index: 20;
+}
+.slide-in-plx{
+  color:$lightTxt;
 }
 @keyframes slide-in {
   from{ transform: translateX(-200px); opacity: 0 ;}
@@ -109,7 +122,7 @@ text-align: center;
 }
 .about-content{
   padding: 30px;
-font-size: 16px;
+font-size: 14px;
 }
 
 .about-img-container{
@@ -143,7 +156,7 @@ font-size: 16px;
 /* Extra Small Devices, Phones */
 @media only screen and (min-width : 480px) {
   .header{
-    height: 660px;
+    height: 517px;
   }
 .p-width{
   width: 75%;
@@ -164,10 +177,10 @@ font-size: 16px;
     width: 380px;
     z-index: -1;
     right: 0px;
-    bottom: 80px;
+    bottom: 209px;
 }
 .about-content{
-  margin-top: -35px;
+  margin-top: -30px;
 }
 .about-content p{
   text-indent: 30px;
@@ -177,16 +190,17 @@ font-size: 16px;
 /* Small Devices, Tablets */
 @media only screen and (min-width : 768px) {
   .header{
-    height: 560px;
+    height: 515px;
   }
 
 .about-title{
   margin-left: 75px;
-  font-size:70px;
+  margin-bottom: 10px;
+  font-size:50px;
 }
 .about-content{
   font-size: 16px;
-  margin-top: -40px;
+  margin-top: -2px;
 }
 
 .p-width{
@@ -203,7 +217,7 @@ font-size: 16px;
   width: 380px;
 z-index: -1;
 right: 31px;
-bottom: 84px;
+bottom: 135px;
 }
 
 .about-img-container img{
@@ -234,15 +248,16 @@ width: 470px;
   }
 
   .about-experience{
-    height:500px;
+    height:350px;
   }
   .about-title{
-    font-size: 100px;
+    font-size: 60px;
     margin-top: 20px;
+    margin-bottom: 15px;
   }
   .about-content {
       font-size: 18px;
-      margin-top: -50px;
+      margin-top: -22px;
   }
   .about-img-container{
     top: 82px;
@@ -260,7 +275,7 @@ width: 470px;
   height: 1000px;
 }
 .about-title{
-  font-size: 120px;
+  font-size: 70px;
 
   }
   .web-tech-content{
@@ -268,7 +283,7 @@ width: 470px;
   }
   .about-content{
     font-size: 30px;
-    margin-top: -105px;
+    margin-top: 20px;
   }
 .about-img-container img{
   width: 750px;
@@ -287,11 +302,11 @@ width: 470px;
 @media only screen and (min-width : 1920px) {
 
 .about-content{
-  margin:0px auto;
+  margin:80px auto 0px;
   padding: 0px;
 }
 .p-width{
-  width: 50%;
+  width: 54%;
 }
 .about-title{
   margin-left:25%;
