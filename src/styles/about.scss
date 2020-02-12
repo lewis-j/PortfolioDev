@@ -37,8 +37,37 @@
     100% 100%,
     0 calc(100% - 6vw)
   );
+  -moz-clip-path: polygon(
+    0 0,
+    100% 0,
+    100% 100%,
+    0 calc(100% - 6vw)
+  );
 
   background-color: white;
+};
+
+  background-color: white;
+}
+
+
+.portfolio-btn {
+  position: absolute;
+  font-family: $header-font;
+      right: 10px;
+      margin-top: 10px;
+      padding: 5px 15px;
+      top: 10px;
+      border: 2px solid;
+      border-radius: 11px;
+
+}
+
+.portfolio-btn:hover{
+  color: $autumnAccent;
+  border-color: $autumnAccent;
+box-shadow: -1px 0px 5px -1px $autumnAccent;
+
 }
 
 
@@ -52,7 +81,7 @@
   width: 100%;
 }
 .contact-header a{
-  color: $autumText;
+  color: $autumnAccent;
 }
 .contact-header a:hover{
   color: #e1c5ad;

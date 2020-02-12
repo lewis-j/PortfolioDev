@@ -1,11 +1,20 @@
 body{
-    font-family: $Header-font;
+    font-family: $p-fonts;
     height: 100%;
+}
+p{
+  font-family: $p-fonts;
 }
 html{
     height: 100%;
 }
 
+span.carousel-control-prev-icon{
+  background-image: url(../img/page_assets/arrow_left.png);
+}
+span.carousel-control-next-icon{
+  background-image: url(../img/page_assets/arrow_right.png);
+}
 
 .badge {
   margin-right: 3px;
@@ -66,6 +75,7 @@ img.banner-img {
     width: 100%;
     height: 80px;
     z-index: 20;
+    font-family: $header-font;
     color: $imgTxtLight;
     border-bottom-width: 1px;
     border-bottom-style: solid;
@@ -83,11 +93,10 @@ img.banner-img {
 }
 .port-section-header{
   margin:15px  auto 5px;
-  font-family: $srjc-font;
+  font-family: $header-font;
 }
 .portfolio{
   background-color: $darkbg;
-  border-radius: 15px;
   padding: 5px 20px 29px;
 }
 .plx-title{
@@ -107,8 +116,12 @@ img.banner-img {
   width: fit-content;
   width: -moz-fit-content;
   font-size:50px;
-  font-family: $srjc-font;
+  font-family: $header-font;
 
+}
+
+.title-wrapper{
+  text-align: center;
 }
 
 
@@ -123,7 +136,7 @@ position: absolute;
 width: 200px;
 font-size: 30px;
 margin: auto;
-font-family: $srjc-font;
+font-family: $header-font;
 font-weight: bold;
 text-align: center;
 left: 0;
@@ -148,12 +161,11 @@ color: $imgTxtLight;
   bottom: 0;
   left: 0;
   right: 0;
-  background: rgba(209, 209, 209, 0.5);
+  background: rgba(90, 90, 90, 0.8);
   transition: all .3s linear;
 }
 
 .image-holder:hover{
-  transform: scale(1.1);
   z-index: 10;
   box-shadow: 0px 0px 5px 1px #888888;
 }
@@ -186,6 +198,7 @@ color: $imgTxtLight;
   color: $iconColor;
   margin:4px;
   display: inline-block;
+  font-size: 3em;
 
 }
 
@@ -197,6 +210,7 @@ color: $imgTxtLight;
   opacity: .4;
 }
 
+
 .about-btn {
   position: absolute;
       right: 10px;
@@ -206,13 +220,17 @@ color: $imgTxtLight;
       border: 2px solid;
       border-radius: 11px;
 
+
+}
+div.about-btn:hover{
+  background-color: rgba(0,0,0,0);
+  color:$autumnAccent;
+   border-color: $autumnAccent;
+   box-shadow: -1px 0px 5px -1px $autumnAccent;
+
 }
 
-.about-btn:hover{
-  background-color: $imgTxtLight;
-  color: black;
-  border:none;
-}
+
 /*BOOTSTRAP CLASS ALTERATIONS*/
 
 .carousel-indicators li {
