@@ -45,9 +45,7 @@
   );
 
   background-color: white;
-};
 
-  background-color: white;
 }
 
 
@@ -302,6 +300,10 @@ width: 470px;
 @media only screen and (min-width : 1200px) {
 .header{
   height: 1000px;
+}
+
+.portfolio-btn{
+  font-size: 25px;
 }
 .about-title{
   font-size: 70px;

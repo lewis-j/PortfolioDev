@@ -128,6 +128,7 @@ class App extends Component{
     this.aboutSection = this.aboutSection.bind(this);
   }
   componentDidMount(){
+    console.log("component mounted");
    this.updateContainer();
   }
   componentDidUpdate(){
@@ -135,7 +136,7 @@ class App extends Component{
   }
 
   updateContainer(){
-    if(this.isAbout){
+    if(!this.isAbout){
     setTimeout(()=>{
      console.log("height", this.myImg.offsetHeight);
       if(this.myImg.offsetHeight>360){
@@ -148,7 +149,7 @@ class App extends Component{
 
 
 
-    },5);
+    },1);
   }
   }
 
@@ -211,7 +212,7 @@ class App extends Component{
          <div className="about-title">About Me</div>
          <p>My name is Lindsey Jackson, and I'm a full-stack web developer.  I have two years of experience creating small business websites on the WordPress platform. I currently develop and manage a web application requested by the SRJC baseball team, where I leverage both front and back end technologies to create full UI layouts and backend architecture. I pursue web development as a means of satisfying a drive for creativity and artistic expression. I strive for result-driven, elegant design in my work, from the structure of my data models to front-end look and feel.</p>
          <p>
-I am continually updating my knowledge to reflect the rapidly evolving nature of web technologies.  I'm passionate about coding and enjoy finding new and more effective ways to bring ideas to life </p>
+I am continually updating my knowledge to reflect the rapidly evolving nature of web technologies.  I'm passionate about coding and enjoy finding new and more effective ways to bring ideas to life. </p>
 </div>
 <figure className = "about-img-container" >
 <img  className="about-img" src={ resources.aboutImg }/>

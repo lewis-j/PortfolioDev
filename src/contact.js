@@ -23,12 +23,12 @@ formSubmit(e){
     from_name: this.state.from_name,
     message: this.state.message
    };
-if(data.email!=''&& data.from_nam!='' &&data.message!='' ){
+if(data.email!=''&& data.from_name!='' &&data.message!='' ){
   emailjs.send(
-   'gmailportfolio',
-   'portfolio_email',
+   'gmail',
+   'template_dAyiDcI2',
     data,
-    'user_zgh74bhkxxkf3OgVgUq9q'
+    'user_sd4vGJ64f83sG75K9YhiE'
  );
  this.setState(prevState=>({
    displayForm: !prevState.displayForm
@@ -56,7 +56,7 @@ return(
   <div className="contact-area">
   <div className = "contact-header">
   <h3>Contact Me</h3>
-  <a href = "mailto: linlewjackson@gmail.com">linlewjackson@gmail.com</a>
+  <a href = "mailto: lindseylewisjackson@gmail.com">lindseylewisjackson@gmail.com</a>
   </div>
 
 <Form className={(this.state.displayForm)?"visable":"form-completed"} onSubmit={ this.formSubmit }>

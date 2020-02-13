@@ -11,9 +11,11 @@ html{
 
 span.carousel-control-prev-icon{
   background-image: url(../img/page_assets/arrow_left.png);
+    @include arrow-size;
 }
 span.carousel-control-next-icon{
   background-image: url(../img/page_assets/arrow_right.png);
+  @include arrow-size;
 }
 
 .badge {
